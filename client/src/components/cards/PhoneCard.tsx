@@ -12,9 +12,9 @@ export default function PhoneCard({
   isLiked
 }: Phone) {
   return (
-    <div className='group w-56 flex flex-col p-4 rounded-2xl shadow font-dmsans gap-2 bg-white border border-gray-200 relative'>
+    <div className='group w-60 flex flex-col p-4 rounded-2xl shadow font-dmsans gap-2 bg-white border border-gray-200 relative'>
       <img
-        className='object-cover p-2'
+        className='h-56 object-cover py-4'
         src={`${import.meta.env.VITE_IMAGE_ROOT_URL}${imagePath}`}
         alt={`Image of ${brand} ${model}`}
       />

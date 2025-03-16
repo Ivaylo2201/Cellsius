@@ -1,3 +1,8 @@
-wwwroot\uploads\apple-iphone-14.jpg
-wwwroot\uploads\samsung-galaxy-s23.jpg
-wwwroot\uploads\xiaomi-redminote-13-pro.jpg
+wwwroot\uploads\apple-iphone-15.jpg
+wwwroot\uploads\apple-iphone-16promax.jpg
+wwwroot\uploads\samsung-galaxy-a16.jpg
+wwwroot\uploads\samsung-galaxy-s24ultra.jpg
+wwwroot\uploads\samsung-galaxy-s25.jpg
+wwwroot\uploads\samsung-galaxy-zflip6.jpg
+wwwroot\uploads\xiaomi-redmi-13.jpg
+wwwroot\uploads\xiaomi-redminote-12-pro.jpg

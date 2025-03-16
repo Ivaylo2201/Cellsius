@@ -1,16 +1,36 @@
 {
   "Files": [
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-14.jpg",
-      "PackagePath": "staticwebassets\\uploads\\apple-iphone-14.jpg"
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-15.jpg",
+      "PackagePath": "staticwebassets\\uploads\\apple-iphone-15.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s23.jpg",
-      "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-s23.jpg"
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-16promax.jpg",
+      "PackagePath": "staticwebassets\\uploads\\apple-iphone-16promax.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-13-pro.jpg",
-      "PackagePath": "staticwebassets\\uploads\\xiaomi-redminote-13-pro.jpg"
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-a16.jpg",
+      "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-a16.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s24ultra.jpg",
+      "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-s24ultra.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s25.jpg",
+      "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-s25.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-zflip6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-zflip6.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redmi-13.jpg",
+      "PackagePath": "staticwebassets\\uploads\\xiaomi-redmi-13.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-12-pro.jpg",
+      "PackagePath": "staticwebassets\\uploads\\xiaomi-redminote-12-pro.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JsHQseMiLdNDVXS+0Zo5AriIxAg3hJ7hKlseeFeowC0=",
+  "Hash": "/ZM+k4SAiMmJnikKf8d1k5sx8yZsCR0fu27tLh3SJ7g=",
   "Source": "Api",
   "BasePath": "_content/Api",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-14.jpg",
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-15.jpg",
       "SourceId": "Api",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
       "BasePath": "_content/Api",
-      "RelativePath": "uploads/apple-iphone-14#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/apple-iphone-15#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,19 +31,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "87hdvcjk25",
-      "Integrity": "VPfEYYDwcBsvdlpe+oucTRNDVpO/7rMWVGWYG/Liny4=",
+      "Fingerprint": "4levyhq0bm",
+      "Integrity": "aL5CWhInKPWWljWUCcydWftvUPua6/IarQikSLkvoSI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\apple-iphone-14.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\apple-iphone-15.jpg"
     },
     {
-      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s23.jpg",
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-16promax.jpg",
       "SourceId": "Api",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
       "BasePath": "_content/Api",
-      "RelativePath": "uploads/samsung-galaxy-s23#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/apple-iphone-16promax#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,19 +52,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jnr8r36ys7",
-      "Integrity": "/wRhqvXAjgs3q89UAcRYj2EO4mt5QO1mc163Yda/+wY=",
+      "Fingerprint": "s4qooget1f",
+      "Integrity": "TBJACG3QFipXUGN0RTllel94yZZNmNHhW9Emcljttw0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\samsung-galaxy-s23.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\apple-iphone-16promax.jpg"
     },
     {
-      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-13-pro.jpg",
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-a16.jpg",
       "SourceId": "Api",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
       "BasePath": "_content/Api",
-      "RelativePath": "uploads/xiaomi-redminote-13-pro#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/samsung-galaxy-a16#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -73,17 +73,122 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ai3sgxdkhk",
-      "Integrity": "wgRvX3sTJG5crVCEJfIfOUtMihmXcb/ryJsRsTY57Jk=",
+      "Fingerprint": "rdjx50wq0n",
+      "Integrity": "oXonguLy6fnhmOTH/ahra+bYW77UW2oxLM4Bw3reYTQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\xiaomi-redminote-13-pro.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\samsung-galaxy-a16.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s24ultra.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/samsung-galaxy-s24ultra#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ultzm9c7da",
+      "Integrity": "XmWFZhzLYGzMLTpH6ycmU7D476mUsbPQmr5oJimJivI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\samsung-galaxy-s24ultra.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s25.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/samsung-galaxy-s25#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zctt53kj8k",
+      "Integrity": "HbVGi6Ml3YyxLJB4+yCpPJ7dD6Lanbo5LX/bquQULI8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\samsung-galaxy-s25.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-zflip6.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/samsung-galaxy-zflip6#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mu2edhru2b",
+      "Integrity": "ErmzjRo0a4b3Y4J+BhWrXkU8neZtCi+u0ZiWMSoshPU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\samsung-galaxy-zflip6.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redmi-13.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/xiaomi-redmi-13#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0n6xacer39",
+      "Integrity": "JMYt9rWXJkn7rs/+SZZi6RNl7UilXJQ60omv4Om+fTM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\xiaomi-redmi-13.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-12-pro.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/xiaomi-redminote-12-pro#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8ic4jj8og5",
+      "Integrity": "sEiJRsM3oEfsBai7KDL98/A4OA4eHr2DnMLq0VcOvdM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\xiaomi-redminote-12-pro.jpg"
     }
   ],
   "Endpoints": [
     {
-      "Route": "uploads/apple-iphone-14.87hdvcjk25.jpg",
-      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-14.jpg",
+      "Route": "uploads/apple-iphone-15.4levyhq0bm.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-15.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -92,7 +197,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "70017"
+          "Value": "11853"
         },
         {
           "Name": "Content-Type",
@@ -100,11 +205,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"VPfEYYDwcBsvdlpe+oucTRNDVpO/7rMWVGWYG/Liny4=\""
+          "Value": "\"aL5CWhInKPWWljWUCcydWftvUPua6/IarQikSLkvoSI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Mar 2025 16:55:36 GMT"
+          "Value": "Sun, 16 Mar 2025 18:48:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -114,21 +219,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "87hdvcjk25"
+          "Value": "4levyhq0bm"
         },
         {
           "Name": "label",
-          "Value": "uploads/apple-iphone-14.jpg"
+          "Value": "uploads/apple-iphone-15.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-VPfEYYDwcBsvdlpe+oucTRNDVpO/7rMWVGWYG/Liny4="
+          "Value": "sha256-aL5CWhInKPWWljWUCcydWftvUPua6/IarQikSLkvoSI="
         }
       ]
     },
     {
-      "Route": "uploads/apple-iphone-14.jpg",
-      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-14.jpg",
+      "Route": "uploads/apple-iphone-15.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-15.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -137,7 +242,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "70017"
+          "Value": "11853"
         },
         {
           "Name": "Content-Type",
@@ -145,11 +250,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"VPfEYYDwcBsvdlpe+oucTRNDVpO/7rMWVGWYG/Liny4=\""
+          "Value": "\"aL5CWhInKPWWljWUCcydWftvUPua6/IarQikSLkvoSI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Mar 2025 16:55:36 GMT"
+          "Value": "Sun, 16 Mar 2025 18:48:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -159,13 +264,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-VPfEYYDwcBsvdlpe+oucTRNDVpO/7rMWVGWYG/Liny4="
+          "Value": "sha256-aL5CWhInKPWWljWUCcydWftvUPua6/IarQikSLkvoSI="
         }
       ]
     },
     {
-      "Route": "uploads/samsung-galaxy-s23.jnr8r36ys7.jpg",
-      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s23.jpg",
+      "Route": "uploads/apple-iphone-16promax.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-16promax.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -174,7 +279,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "217653"
+          "Value": "12556"
         },
         {
           "Name": "Content-Type",
@@ -182,11 +287,48 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/wRhqvXAjgs3q89UAcRYj2EO4mt5QO1mc163Yda/+wY=\""
+          "Value": "\"TBJACG3QFipXUGN0RTllel94yZZNmNHhW9Emcljttw0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Mar 2025 16:58:08 GMT"
+          "Value": "Sun, 16 Mar 2025 18:50:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TBJACG3QFipXUGN0RTllel94yZZNmNHhW9Emcljttw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/apple-iphone-16promax.s4qooget1f.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-16promax.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12556"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TBJACG3QFipXUGN0RTllel94yZZNmNHhW9Emcljttw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:50:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -196,21 +338,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jnr8r36ys7"
+          "Value": "s4qooget1f"
         },
         {
           "Name": "label",
-          "Value": "uploads/samsung-galaxy-s23.jpg"
+          "Value": "uploads/apple-iphone-16promax.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/wRhqvXAjgs3q89UAcRYj2EO4mt5QO1mc163Yda/+wY="
+          "Value": "sha256-TBJACG3QFipXUGN0RTllel94yZZNmNHhW9Emcljttw0="
         }
       ]
     },
     {
-      "Route": "uploads/samsung-galaxy-s23.jpg",
-      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s23.jpg",
+      "Route": "uploads/samsung-galaxy-a16.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-a16.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -219,7 +361,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "217653"
+          "Value": "11322"
         },
         {
           "Name": "Content-Type",
@@ -227,11 +369,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/wRhqvXAjgs3q89UAcRYj2EO4mt5QO1mc163Yda/+wY=\""
+          "Value": "\"oXonguLy6fnhmOTH/ahra+bYW77UW2oxLM4Bw3reYTQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Mar 2025 16:58:08 GMT"
+          "Value": "Sun, 16 Mar 2025 18:47:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -241,13 +383,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/wRhqvXAjgs3q89UAcRYj2EO4mt5QO1mc163Yda/+wY="
+          "Value": "sha256-oXonguLy6fnhmOTH/ahra+bYW77UW2oxLM4Bw3reYTQ="
         }
       ]
     },
     {
-      "Route": "uploads/xiaomi-redminote-13-pro.ai3sgxdkhk.jpg",
-      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-13-pro.jpg",
+      "Route": "uploads/samsung-galaxy-a16.rdjx50wq0n.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-a16.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -256,7 +398,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "31883"
+          "Value": "11322"
         },
         {
           "Name": "Content-Type",
@@ -264,11 +406,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wgRvX3sTJG5crVCEJfIfOUtMihmXcb/ryJsRsTY57Jk=\""
+          "Value": "\"oXonguLy6fnhmOTH/ahra+bYW77UW2oxLM4Bw3reYTQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Mar 2025 16:49:56 GMT"
+          "Value": "Sun, 16 Mar 2025 18:47:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -278,21 +420,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ai3sgxdkhk"
+          "Value": "rdjx50wq0n"
         },
         {
           "Name": "label",
-          "Value": "uploads/xiaomi-redminote-13-pro.jpg"
+          "Value": "uploads/samsung-galaxy-a16.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wgRvX3sTJG5crVCEJfIfOUtMihmXcb/ryJsRsTY57Jk="
+          "Value": "sha256-oXonguLy6fnhmOTH/ahra+bYW77UW2oxLM4Bw3reYTQ="
         }
       ]
     },
     {
-      "Route": "uploads/xiaomi-redminote-13-pro.jpg",
-      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-13-pro.jpg",
+      "Route": "uploads/samsung-galaxy-s24ultra.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s24ultra.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -301,7 +443,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "31883"
+          "Value": "13273"
         },
         {
           "Name": "Content-Type",
@@ -309,11 +451,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wgRvX3sTJG5crVCEJfIfOUtMihmXcb/ryJsRsTY57Jk=\""
+          "Value": "\"XmWFZhzLYGzMLTpH6ycmU7D476mUsbPQmr5oJimJivI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 13 Mar 2025 16:49:56 GMT"
+          "Value": "Sun, 16 Mar 2025 19:14:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -323,7 +465,380 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wgRvX3sTJG5crVCEJfIfOUtMihmXcb/ryJsRsTY57Jk="
+          "Value": "sha256-XmWFZhzLYGzMLTpH6ycmU7D476mUsbPQmr5oJimJivI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/samsung-galaxy-s24ultra.ultzm9c7da.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s24ultra.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XmWFZhzLYGzMLTpH6ycmU7D476mUsbPQmr5oJimJivI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 19:14:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ultzm9c7da"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/samsung-galaxy-s24ultra.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XmWFZhzLYGzMLTpH6ycmU7D476mUsbPQmr5oJimJivI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/samsung-galaxy-s25.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s25.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10201"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HbVGi6Ml3YyxLJB4+yCpPJ7dD6Lanbo5LX/bquQULI8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:46:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HbVGi6Ml3YyxLJB4+yCpPJ7dD6Lanbo5LX/bquQULI8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/samsung-galaxy-s25.zctt53kj8k.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s25.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10201"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HbVGi6Ml3YyxLJB4+yCpPJ7dD6Lanbo5LX/bquQULI8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:46:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zctt53kj8k"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/samsung-galaxy-s25.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HbVGi6Ml3YyxLJB4+yCpPJ7dD6Lanbo5LX/bquQULI8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/samsung-galaxy-zflip6.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-zflip6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11147"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ErmzjRo0a4b3Y4J+BhWrXkU8neZtCi+u0ZiWMSoshPU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:48:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ErmzjRo0a4b3Y4J+BhWrXkU8neZtCi+u0ZiWMSoshPU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/samsung-galaxy-zflip6.mu2edhru2b.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-zflip6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11147"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ErmzjRo0a4b3Y4J+BhWrXkU8neZtCi+u0ZiWMSoshPU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:48:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mu2edhru2b"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/samsung-galaxy-zflip6.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ErmzjRo0a4b3Y4J+BhWrXkU8neZtCi+u0ZiWMSoshPU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/xiaomi-redmi-13.0n6xacer39.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redmi-13.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JMYt9rWXJkn7rs/+SZZi6RNl7UilXJQ60omv4Om+fTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:53:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0n6xacer39"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/xiaomi-redmi-13.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JMYt9rWXJkn7rs/+SZZi6RNl7UilXJQ60omv4Om+fTM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/xiaomi-redmi-13.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redmi-13.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JMYt9rWXJkn7rs/+SZZi6RNl7UilXJQ60omv4Om+fTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:53:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JMYt9rWXJkn7rs/+SZZi6RNl7UilXJQ60omv4Om+fTM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/xiaomi-redminote-12-pro.8ic4jj8og5.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-12-pro.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22376"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sEiJRsM3oEfsBai7KDL98/A4OA4eHr2DnMLq0VcOvdM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:51:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8ic4jj8og5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/xiaomi-redminote-12-pro.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sEiJRsM3oEfsBai7KDL98/A4OA4eHr2DnMLq0VcOvdM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/xiaomi-redminote-12-pro.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-12-pro.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22376"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sEiJRsM3oEfsBai7KDL98/A4OA4eHr2DnMLq0VcOvdM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 18:51:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sEiJRsM3oEfsBai7KDL98/A4OA4eHr2DnMLq0VcOvdM="
         }
       ]
     }
