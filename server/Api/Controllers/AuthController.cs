@@ -60,19 +60,8 @@ namespace Api.Controllers
         {
             var user = _context.Users.Where(u => u.Email == request.Email)
                                      .Include(u => u.Cart)
-                                         .ThenInclude(c => c.Items)
-                                         .ThenInclude(i => i.Phone)
-                                         .ThenInclude(p => p.Brand)
-                                     .Include(u => u.Cart)
-                                         .ThenInclude(c => c.Items)
-                                         .ThenInclude(i => i.Phone)
-                                         .ThenInclude(p => p.Model)
-                                     .Include(u => u.Cart)
-                                         .ThenInclude(c => c.Items)
-                                         .ThenInclude(i => i.Phone)
-                                         .ThenInclude(p => p.Color)
-                                     .FirstOrDefault();
-
+                                     .ThenInclude(c => c.Items)
+                                     .ThenInclude(i => i.Phone).FirstOrDefault();
                                             
             if (user is null)
                 return NotFound(new { message = "User not found." });
@@ -82,18 +71,7 @@ namespace Api.Controllers
 
             var items = user.Cart!.Items.Select(i => new
             {
-                id = i.Id,
-                phone = new
-                {
-                    brand = i.Phone.Brand.Name,
-                    model = i.Phone.Model.Name,
-                    color = i.Phone.Color.Name,
-                    memory = i.Phone.Memory,
-                    price = i.Phone.Price,
-                    image = i.Phone.ImagePath
-                },
-                quantity = i.Quantity,
-                price = i.Quantity * i.Phone.Price
+                price = i.Phone.Price
             });
 
             return Ok(new
@@ -101,8 +79,8 @@ namespace Api.Controllers
                 token = _authService.GenerateToken(user),
                 cart = new
                 {
-                    items,
-                    subtotal = items.Select(i => i.price).Sum()
+                    items = items.Count(),
+                    subtotal = items.Sum(i => i.price)
                 }
             });
         }

@@ -19,31 +19,39 @@ namespace Api.Controllers
         {
             if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int id))
             {
-                var cart = _context.Carts
-                    .Where(c => c.Id == id)
-                    .Include(c => c.Items)
-                    .ThenInclude(i => i.Phone)
-                    .Select(c => new
-                    {
-                        CartId = c.Id,
-                        Items = c.Items.Select(i => new
-                        {
-                            i.Id,
-                            i.Quantity,
-                            Phone = new
-                            {
-                                brand = i.Phone.Brand.Name,
-                                model = i.Phone.Model.Name,
-                                color = i.Phone.Color.Name,
-                                price = i.Phone.Price,
-                                memory = i.Phone.Memory
-                            },
-                            price = i.Quantity * i.Phone.Price
-                        })
-                    })
-                    .FirstOrDefault();
 
-                return Ok(cart);                
+
+                var cart = _context.Carts.Where(c => c.Id == id)
+                                        .Include(c => c.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Brand)
+                                        .Include(c => c.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Model)
+                                        .Include(c => c.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Color)
+                                            .FirstOrDefault();
+
+                return Ok(new
+                {
+                    items = cart!.Items.Select(i => new
+                    {
+                        i.Id,
+                        i.Quantity,
+                        Phone = new
+                        {
+                            brand = i.Phone.Brand.Name,
+                            model = i.Phone.Model.Name,
+                            color = i.Phone.Color.Name,
+                            price = i.Phone.Price,
+                            memory = i.Phone.Memory,
+                            image = i.Phone.ImagePath
+                        },
+                        price = i.Quantity * i.Phone.Price
+                    }),
+                    subtotal = cart.Items.Select(i => i.Phone.Price).Sum()
+                });                
             }
             else
             {
@@ -61,7 +69,7 @@ namespace Api.Controllers
                 var user = _context.Users.Include(u => u.Cart).Where(u => u.Id == id).FirstOrDefault();
                 var phone = _context.Phones.Where(p => p.Id == request.PhoneId).FirstOrDefault()!;
 
-                var item = new Item { Phone = phone, Cart = user.Cart, Quantity = request.Quantity };
+                var item = new Item { Phone = phone, Cart = user!.Cart!, Quantity = request.Quantity };
 
                 _context.Items.Add(item);
                 _context.SaveChanges();
