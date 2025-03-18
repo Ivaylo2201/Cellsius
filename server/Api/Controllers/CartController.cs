@@ -13,6 +13,31 @@ namespace Api.Controllers
     {
         private readonly DatabaseContext _context = context;
 
+        [HttpPatch("item/{id}")]
+        [Authorize]
+        public IActionResult UpdateItemQuantity([FromRoute] int id, [FromBody] UpdateQuantityRequest request)
+        {
+            if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
+            {
+                var item = _context.Items.Where(i => i.Id == id).FirstOrDefault();
+                var cart = _context.Carts.Where(c => c.UserId == userId).FirstOrDefault();
+
+                if (item!.CartId != cart!.Id)
+                {
+                    return Forbid();
+                }
+
+                item.Quantity = request.Quantity;
+                _context.SaveChanges();
+
+                return Ok(new { message = $"Item {id} quantity updated to {request.Quantity}" });
+            }
+            else
+            {
+                return BadRequest(new { message = "Something went wrong." });
+            }
+        }
+
         [HttpGet]
         [Authorize]
         public IActionResult GetCartItems()
@@ -41,16 +66,17 @@ namespace Api.Controllers
                         i.Quantity,
                         Phone = new
                         {
+                            id = i.Phone.Id,
                             brand = i.Phone.Brand.Name,
                             model = i.Phone.Model.Name,
                             color = i.Phone.Color.Name,
                             price = i.Phone.Price,
                             memory = i.Phone.Memory,
-                            image = i.Phone.ImagePath
+                            imagePath = i.Phone.ImagePath
                         },
                         price = i.Quantity * i.Phone.Price
                     }),
-                    subtotal = cart.Items.Select(i => i.Phone.Price).Sum()
+                    subtotal = cart.Items.Select(i => i.Phone.Price * i.Quantity).Sum()
                 });                
             }
             else

@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 type ButtonProps = {
   className?: string;
   to?: string;
+  onClick?: () => void;
 } & React.PropsWithChildren;
 
 export default function Button({

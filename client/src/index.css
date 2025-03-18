@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 body {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 @theme {
@@ -9,4 +9,18 @@ body {
 
   --color-light-darkblue: #47575e;
   --color-darkblue: #37444a;
+}
+
+.mantine-Input-input {
+  &:focus-within {
+    border: var(--color-blue-400) 1px solid;
+  }
+}
+
+.m_8ee546b8.mantine-Radio-label {
+  font-size: 15px;
+}
+
+.m_8fdc1311.mantine-InputWrapper-label.mantine-RadioGroup-label {
+  font-size: 25px;
 }
