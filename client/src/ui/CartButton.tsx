@@ -11,7 +11,7 @@ export default function CartButton() {
       className='flex justify-center items-center rounded-full p-2 gap-4 cursor-pointer relative font-dmsans'
     >
       <div className='relative'>
-        <ShoppingCart strokeWidth={1.75} />
+        <ShoppingCart color={'var(--color-darkblue)'} strokeWidth={1.75} />
         <span className='size-4.5 text-white flex justify-center items-center text-xs absolute -top-3 -right-3 rounded-full bg-blue-400 p-2'>
           {cart.items.length}
         </span>

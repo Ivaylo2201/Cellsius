@@ -12,7 +12,7 @@ export default function QuantityControl({
   onDecrement
 }: QuantityControlProps) {
   return (
-    <div className='flex flex-col gap-1.5 md:flex-row justify-center items-center font-dmsans'>
+    <div className='flex flex-col gap-2 md:flex-row justify-center items-center font-dmsans'>
       <button
         onClick={onDecrement}
         disabled={quantity === 1}

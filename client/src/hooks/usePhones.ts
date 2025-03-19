@@ -6,8 +6,7 @@ export default function usePhones(filters: object) {
   return useSuspenseQuery({
     queryKey: ['phones', { filters }],
     queryFn: async () => {
-      console.log('fetching');
-      const res = await http.get<Phone[]>('/phone/public', { params: filters });
+      const res = await http.get<Phone[]>('/phone', { params: filters });
       return res.data;
     },
   });

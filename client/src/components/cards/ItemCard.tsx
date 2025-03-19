@@ -20,13 +20,13 @@ export default function ItemCard({ id, phone, quantity, price }: Item) {
   };
 
   return (
-    <div className='flex justify-between border border-gray-200 rounded-xl py-6 pr-6.5 font-dmsans'>
+    <div className='flex justify-between border border-gray-200 rounded-xl py-6 pr-8.5 font-dmsans'>
       <img
         className='h-32 object-cover rounded-lg'
         src={imageUrl}
         alt={`Image of ${phone.brand} ${phone.model}`}
       />
-      <section className='w-72 lg:w-[26rem] flex grow flex-col'>
+      <section className='w-72 lg:w-[26rem] pr-2 flex grow flex-col'>
         <p className='font-semibold line-clamp-2 '>
           {phone.brand} {phone.model}, {phone.color}, {phone.memory}GB
         </p>

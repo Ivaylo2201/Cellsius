@@ -6,5 +6,4 @@ export type Phone = {
   price: number;
   memory: number;
   imagePath: string;
-  isLiked: boolean;
 };

@@ -88,7 +88,6 @@ namespace Api
                 .WithOne(c => c.User)
                 .HasForeignKey<Cart>(c => c.UserId);
 
-            modelBuilder.Entity<Phone>().HasMany(p => p.LikedBy).WithMany(u => u.LikedPhones);
             this.Seed(modelBuilder);
         }
     }

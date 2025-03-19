@@ -1,3 +1,4 @@
+import Footer from '../ui/Footer';
 import Header from '../ui/Header';
 
 type PageProps = {
@@ -9,7 +10,7 @@ export default function Page({ children, className = '' }: PageProps) {
     <div className={`flex flex-col min-h-screen ${className}`}>
       <Header />
       <main className='flex justify-center items-center grow p-10'>{children}</main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }

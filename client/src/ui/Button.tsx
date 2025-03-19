@@ -16,7 +16,7 @@ export default function Button({
     <Link
       to={to}
       onClick={onClick}
-      className={`min-w-24 flex justify-center items-center transition-colors duration-200 cursor-pointer rounded-full px-4 py-2 font-dmsans ${className}`}
+      className={`min-w-32 flex justify-center items-center transition-colors duration-200 cursor-pointer rounded-full px-4 py-2 font-dmsans ${className}`}
     >
       {children}
     </Link>

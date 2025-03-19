@@ -163,65 +163,8 @@
   },
   {
     "ContainingType": "Api.Controllers.PhoneController",
-    "Method": "GetAuthenticatedPhones",
-    "RelativePath": "api/Phone/authenticated",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "brand",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "model",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "color",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "max",
-        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "query",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "sort",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.PhoneController",
-    "Method": "LikePhone",
-    "RelativePath": "api/Phone/like",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "Api.Data_Transfer_Objects.LikePhoneRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.PhoneController",
     "Method": "GetPublicPhones",
-    "RelativePath": "api/Phone/public",
+    "RelativePath": "api/Phone",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
