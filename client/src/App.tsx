@@ -11,7 +11,7 @@ export default function App() {
 
   (async () => {
     const res = await http.post<{ token: string }>('/auth/login', {
-      email: 'ivo@ivo.bg',
+      email: 'john@example.com',
       password: '12345'
     });
 
@@ -27,7 +27,17 @@ export default function App() {
           <Route path='/cart' element={<CartPage />} />
         </Routes>
       </BrowserRouter>
-      <ToastContainer autoClose={3000} pauseOnHover={false} theme='dark' />
+      <ToastContainer
+        autoClose={3000}
+        pauseOnHover={false}
+        progressClassName={'text-darkblue'}
+        toastStyle={{
+          backgroundColor: 'var(--color-darkblue)',
+          color: 'white',
+          fontFamily: 'DM Sans, sans-serif',
+        }}
+        
+      />
     </>
   );
 }

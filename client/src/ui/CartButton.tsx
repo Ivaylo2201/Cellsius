@@ -1,12 +1,10 @@
 import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router';
+import useCart from '../hooks/useCart';
 
-type CartButtonProps = {
-  items: number;
-  total: number;
-};
+export default function CartButton() {
+  const { data: cart } = useCart();
 
-export default function CartButton({ items, total }: CartButtonProps) {
   return (
     <Link
       to='/cart'
@@ -15,10 +13,10 @@ export default function CartButton({ items, total }: CartButtonProps) {
       <div className='relative'>
         <ShoppingCart strokeWidth={1.75} />
         <span className='size-4.5 text-white flex justify-center items-center text-xs absolute -top-3 -right-3 rounded-full bg-blue-400 p-2'>
-          {items}
+          {cart.items.length}
         </span>
       </div>
-      <p className='text-darkblue'>${total.toFixed(2)}</p>
+      <p className='text-darkblue'>${cart.subtotal.toFixed(2)}</p>
     </Link>
   );
 }

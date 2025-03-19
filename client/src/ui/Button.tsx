@@ -9,11 +9,13 @@ type ButtonProps = {
 export default function Button({
   children,
   to = '',
-  className = ''
+  className = '',
+  onClick
 }: ButtonProps) {
   return (
     <Link
       to={to}
+      onClick={onClick}
       className={`min-w-24 flex justify-center items-center transition-colors duration-200 cursor-pointer rounded-full px-4 py-2 font-dmsans ${className}`}
     >
       {children}

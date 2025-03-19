@@ -20,21 +20,21 @@ export default function ItemCard({ id, phone, quantity, price }: Item) {
   };
 
   return (
-    <div className='flex border border-gray-200 rounded-xl py-6 font-dmsans'>
+    <div className='flex justify-between border border-gray-200 rounded-xl py-6 pr-6.5 font-dmsans'>
       <img
         className='h-32 object-cover rounded-lg'
         src={imageUrl}
         alt={`Image of ${phone.brand} ${phone.model}`}
       />
-      <div className='min-w-96 flex flex-col'>
+      <section className='w-72 lg:w-[26rem] flex grow flex-col'>
         <p className='font-semibold line-clamp-2 '>
           {phone.brand} {phone.model}, {phone.color}, {phone.memory}GB
         </p>
-        <p>Item Id: {id}</p>
+        <p>Product price: ${phone.price}</p>
         <p className='font-semibold mt-auto py-1 text-xl text-darkblue'>
           ${price.toFixed(2)}
         </p>
-      </div>
+      </section>
 
       <QuantityControl
         quantity={selectedQuantity}

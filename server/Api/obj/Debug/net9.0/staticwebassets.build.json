@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/ZM+k4SAiMmJnikKf8d1k5sx8yZsCR0fu27tLh3SJ7g=",
+  "Hash": "m0h/5efMfYasaAqMwV+Rjpi8GcXbKoz/LCwPFPPR0X8=",
   "Source": "Api",
   "BasePath": "_content/Api",
   "Mode": "Default",
@@ -141,6 +141,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\samsung-galaxy-zflip6.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-14t-pro.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/xiaomi-14t-pro#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6ievs1wzb5",
+      "Integrity": "LlsSyivca7l4wl5oXkR+hxSePux8qzH4LmaJgmhg/HU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\xiaomi-14t-pro.jpg"
     },
     {
       "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redmi-13.jpg",
@@ -675,6 +696,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ErmzjRo0a4b3Y4J+BhWrXkU8neZtCi+u0ZiWMSoshPU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/xiaomi-14t-pro.6ievs1wzb5.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-14t-pro.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5390"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LlsSyivca7l4wl5oXkR+hxSePux8qzH4LmaJgmhg/HU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 19:11:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6ievs1wzb5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/xiaomi-14t-pro.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LlsSyivca7l4wl5oXkR+hxSePux8qzH4LmaJgmhg/HU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/xiaomi-14t-pro.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-14t-pro.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5390"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LlsSyivca7l4wl5oXkR+hxSePux8qzH4LmaJgmhg/HU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Mar 2025 19:11:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LlsSyivca7l4wl5oXkR+hxSePux8qzH4LmaJgmhg/HU="
         }
       ]
     },

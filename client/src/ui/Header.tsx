@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import Logo from '../components/miscellaneous/Logo';
 import Button from './Button';
 import CartButton from './CartButton';
@@ -12,6 +13,7 @@ export default function Header() {
         <Logo />
       </section>
       <section className='sm:w-1/3 flex justify-center items-center gap-5 py-2 sm:py-0'>
+        <Link to='/catalogue'>Catalogue</Link>
         <SearchBox />
       </section>
       <section className='sm:w-1/3 flex justify-center items-center pt-1 pb-2 sm:pt-0 sm:pb-0'>
@@ -38,7 +40,7 @@ export default function Header() {
             >
               Add Phone
             </Button>
-            <CartButton items={5} total={183.42} />
+            <CartButton />
           </div>
         )}
       </section>

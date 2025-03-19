@@ -95,7 +95,7 @@ namespace Api.Controllers
                 var user = _context.Users.Include(u => u.Cart).Where(u => u.Id == id).FirstOrDefault();
                 var phone = _context.Phones.Where(p => p.Id == request.PhoneId).FirstOrDefault()!;
 
-                var item = new Item { Phone = phone, Cart = user!.Cart!, Quantity = request.Quantity };
+                var item = new Item { Phone = phone, Cart = user!.Cart!, Quantity = 1 };
 
                 _context.Items.Add(item);
                 _context.SaveChanges();

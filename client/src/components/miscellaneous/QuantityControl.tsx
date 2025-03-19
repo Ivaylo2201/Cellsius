@@ -12,7 +12,7 @@ export default function QuantityControl({
   onDecrement
 }: QuantityControlProps) {
   return (
-    <div className='min-w-24 flex justify-center items-center font-dmsans mr-6 g-red-500'>
+    <div className='flex flex-col gap-1.5 md:flex-row justify-center items-center font-dmsans'>
       <button
         onClick={onDecrement}
         disabled={quantity === 1}
@@ -20,7 +20,7 @@ export default function QuantityControl({
       >
         <Minus size={16} strokeWidth={2.75} />
       </button>
-      <span className='w-6 mx-4 text-center'>
+      <span className='w-6 text-center'>
         <p className='text-xl font-semibold text-darkblue'>{quantity}</p>
       </span>
       <button

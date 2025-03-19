@@ -2,12 +2,27 @@ import Page from '../layout/Page';
 import PhoneCard from '../components/cards/PhoneCard';
 import { useSearchParams } from 'react-router';
 import usePhones from '../hooks/usePhones';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Loader } from '@mantine/core';
+import { Phone } from '../types/Phone';
+import { http } from '../utils/http';
 
 export default function PhonesPage() {
   const [search] = useSearchParams();
-  const { data: phones } = usePhones(Object.fromEntries(search.entries()));
+  // const { data: phones } = usePhones(Object.fromEntries(search.entries()));
+
+  const [phones, setPhones] = useState<Phone[]>([]);
+  // const { isAuthetnicated } = useAuthStore();
+  const getPhonesUrl =
+    localStorage.getItem('token') === null
+      ? '/phone/public'
+      : '/phone/authenticated';
+
+  useEffect(() => {
+    http
+      .get(getPhonesUrl, { params: Object.fromEntries(search.entries()) })
+      .then((res) => setPhones(res.data));
+  }, []);
 
   return (
     <Page>

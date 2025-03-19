@@ -15,6 +15,23 @@ namespace Api
 
         protected void Seed(ModelBuilder modelBuilder)
         {
+            var user = new User
+            {
+                Id = 1,
+                Username = "John",
+                Email = "john@example.com",
+                Password = BCrypt.Net.BCrypt.HashPassword("12345"),
+            };
+
+            var cart = new Cart
+            {
+                Id = 1,
+                UserId = 1
+            };
+
+            modelBuilder.Entity<User>().HasData(user);
+            modelBuilder.Entity<Cart>().HasData(cart);
+
             modelBuilder.Entity<Brand>().HasData(
                 new Brand { Id = 1, Name = "Samsung" },
                 new Brand { Id = 2, Name = "Apple" },
@@ -51,7 +68,7 @@ namespace Api
                 new Phone { Id = 4, BrandId = 1, ModelId = 4, ColorId = 3, Price = 1200, Memory = 512, ImagePath = "/uploads/samsung-galaxy-zflip6.jpg" },
                 new Phone { Id = 5, BrandId = 2, ModelId = 5, ColorId = 2, Price = 2000, Memory = 512, ImagePath = "/uploads/apple-iphone-16promax.jpg" },
                 new Phone { Id = 6, BrandId = 2, ModelId = 6, ColorId = 1, Price = 1750, Memory = 256, ImagePath = "/uploads/apple-iphone-15.jpg" },
-                new Phone { Id = 7, BrandId = 3, ModelId = 8, ColorId = 1, Price = 300, Memory = 128, ImagePath = "/uploads/xiaomi-redminote-13-pro.jpg" },
+                new Phone { Id = 7, BrandId = 3, ModelId = 8, ColorId = 1, Price = 300, Memory = 128, ImagePath = "/uploads/xiaomi-14t-pro.jpg" },
                 new Phone { Id = 9, BrandId = 3, ModelId = 10, ColorId = 6, Price = 700, Memory = 256, ImagePath = "/uploads/xiaomi-redmi-13.jpg" }
             );
         }
