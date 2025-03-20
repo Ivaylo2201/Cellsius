@@ -12,6 +12,7 @@ namespace Api
         public DbSet<User> Users => Set<User>();
         public DbSet<Cart> Carts => Set<Cart>();
         public DbSet<Item> Items => Set<Item>();
+        public DbSet<Order> Orders => Set<Order>();
 
         protected void Seed(ModelBuilder modelBuilder)
         {

@@ -1,10 +1,6 @@
 import Page from "../layout/Page";
 
-type HomePageProps = {
-
-}
-
-export default function HomePage({}: HomePageProps) {
+export default function HomePage() {
   return (
     <Page></Page>
   );

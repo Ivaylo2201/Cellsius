@@ -5,6 +5,7 @@ import CartPage from './pages/CartPage';
 import { http } from './utils/http';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import OrdersPage from './pages/OrdersPage';
 
 export default function App() {
   // AUTO LOGIN
@@ -25,6 +26,7 @@ export default function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/catalogue' element={<PhonesPage />} />
           <Route path='/cart' element={<CartPage />} />
+          <Route path='/orders' element={<OrdersPage />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer
@@ -34,9 +36,8 @@ export default function App() {
         toastStyle={{
           backgroundColor: 'var(--color-darkblue)',
           color: 'white',
-          fontFamily: 'DM Sans, sans-serif',
+          fontFamily: 'DM Sans, sans-serif'
         }}
-        
       />
     </>
   );

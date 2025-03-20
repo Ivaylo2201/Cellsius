@@ -2,6 +2,8 @@ import { Radio, Stack } from '@mantine/core';
 import Button from '../../ui/Button';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
+import usePlaceOrder from '../../hooks/usePlaceOrder';
+import { AxiosError } from 'axios';
 
 type ShippingProps = {
   subtotal: number;
@@ -17,20 +19,21 @@ const shippingTypes: Record<'standard' | 'express' | 'next' | 'same', number> =
 
 export default function ShippingPanel({ subtotal }: ShippingProps) {
   const [shippingCost, setShippingCost] = useState<number>(0);
+  const { mutateAsync: placeOrder } = usePlaceOrder();
 
-  const placeOrderHandler = () => {
-    // TODO: place order logic
-
-    // Send post request to the cart
-    // and have it create the order object with the
-    // updates items and quantities also send the shipping cost
-    // and finally clear the cart
-    toast.success('Order placed successfully!');
-    return;
+  const placeOrderHandler = async () => {
+    try {
+      await placeOrder(subtotal + shippingCost);
+      toast.success('Order placed successfully!');
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        toast.error(error.response?.data.message);
+      }
+    }
   };
 
   return (
-    <section className='max-h-[30rem] flex flex-col gap-8 justify-between border border-gray-200 rounded-2xl p-8'>
+    <section className='max-h-[31rem] flex flex-col gap-8 justify-between border border-gray-200 rounded-2xl p-8'>
       <Radio.Group
         name='shippingType'
         description='Only applicable for workdays.'
@@ -91,7 +94,6 @@ export default function ShippingPanel({ subtotal }: ShippingProps) {
       </section>
 
       <Button
-        to='/'
         onClick={placeOrderHandler}
         className='w-32 bg-blue-400 hover:bg-blue-300 text-white'
       >

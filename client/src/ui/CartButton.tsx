@@ -16,7 +16,7 @@ export default function CartButton() {
           {cart.items.length}
         </span>
       </div>
-      <p className='text-darkblue'>${cart.subtotal.toFixed(2)}</p>
+      <p className='text-darkblue'>${cart.subtotal}</p>
     </Link>
   );
 }

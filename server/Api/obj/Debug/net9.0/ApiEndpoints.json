@@ -121,6 +121,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Api.Controllers.OrderController",
+    "Method": "GetOrders",
+    "RelativePath": "api/Order",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.OrderController",
+    "Method": "CreateOrder",
+    "RelativePath": "api/Order/place",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Api.Data_Transfer_Objects.CreateOrderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Api.Controllers.PhoneController",
     "Method": "CreatePhone",
     "RelativePath": "api/Phone",

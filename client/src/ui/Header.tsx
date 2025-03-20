@@ -1,9 +1,6 @@
+import ActionButtons from '../components/miscellaneous/ActionButtons';
 import Logo from '../components/miscellaneous/Logo';
-import Button from './Button';
-import CartButton from './CartButton';
 import SearchBox from './SearchBox';
-
-const isAuth = true;
 
 export default function Header() {
   return (
@@ -15,32 +12,7 @@ export default function Header() {
         <SearchBox />
       </section>
       <section className='lg:w-1/3 flex justify-center items-center'>
-        {isAuth ? (
-          <div className='flex gap-4'>
-            <Button
-              to='/phone/add'
-              className='bg-blue-400 flex hover:bg-blue-300 text-white h-auto'
-            >
-              Add Phone
-            </Button>
-            <CartButton />
-          </div>
-        ) : (
-          <div className='flex gap-4'>
-            <Button
-              to='/register'
-              className='bg-blue-400 hover:bg-blue-300 text-white'
-            >
-              Register
-            </Button>
-            <Button
-              to='/login'
-              className='bg-darkblue hover:bg-light-darkblue text-white'
-            >
-              Login
-            </Button>
-          </div>
-        )}
+        <ActionButtons />
       </section>
     </header>
   );

@@ -8,8 +8,8 @@ type ItemListProps = {
 export default function ItemList({ items }: ItemListProps) {
   if (items.length === 0) {
     return (
-      <section>
-        <p className='text-xl'>No added items yet.</p>
+      <section className='text-center lg:flex lg:justify-center lg:items-center lg:px-20'>
+        <p className='text-3xl font-semibold text-darkblue'>No added items yet.</p>
       </section>
     );
   }
