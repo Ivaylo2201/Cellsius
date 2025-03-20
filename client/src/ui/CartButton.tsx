@@ -16,7 +16,7 @@ export default function CartButton() {
           {cart.items.length}
         </span>
       </div>
-      <p className='text-darkblue'>${cart.subtotal}</p>
+      <p className='w-12 text-center text-darkblue'>${cart.subtotal}</p>
     </Link>
   );
 }

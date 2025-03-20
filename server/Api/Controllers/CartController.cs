@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace Api.Controllers
 {
@@ -44,8 +45,6 @@ namespace Api.Controllers
         {
             if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int id))
             {
-
-
                 var cart = _context.Carts.Where(c => c.Id == id)
                                         .Include(c => c.Items)
                                             .ThenInclude(i => i.Phone)
@@ -60,7 +59,7 @@ namespace Api.Controllers
 
                 return Ok(new
                 {
-                    items = cart!.Items.Select(i => new
+                    items = cart!.Items.Where(i => i.IsOrdered == false).Select(i => new
                     {
                         i.Id,
                         i.Quantity,
@@ -95,7 +94,7 @@ namespace Api.Controllers
                 var user = _context.Users.Include(u => u.Cart).Where(u => u.Id == id).FirstOrDefault();
                 var phone = _context.Phones.Where(p => p.Id == request.PhoneId).FirstOrDefault()!;
 
-                var item = new Item { Phone = phone, Cart = user!.Cart!, Quantity = 1 };
+                var item = new Item { Phone = phone, Cart = user!.Cart!, Quantity = 1, Order = null };
 
                 _context.Items.Add(item);
                 _context.SaveChanges();

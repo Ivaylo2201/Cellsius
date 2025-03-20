@@ -1,9 +1,7 @@
 import { Package } from 'lucide-react';
 import { Link } from 'react-router';
 
-type OrdersButtonProps = {};
-
-export default function OrdersButton({}: OrdersButtonProps) {
+export default function OrdersButton() {
   return (
     <Link
       to='/orders'

@@ -19,12 +19,32 @@ namespace Api.Controllers
         {
             if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
             {
-                var orders = _context.Orders.Where(o => o.UserId == userId);
+                var orders = _context.Orders.Include(c => c.Items)
+                                                .ThenInclude(i => i.Phone)
+                                                .ThenInclude(p => p.Brand)
+                                            .Include(c => c.Items)
+                                                .ThenInclude(i => i.Phone)
+                                                .ThenInclude(p => p.Model)
+                                            .Include(c => c.Items)
+                                                .ThenInclude(i => i.Phone)
+                                                .ThenInclude(p => p.Color)
+                                            .Where(o => o.UserId == userId);
+
                 return Ok(orders.Select(o => new
                 {
                     id = o.Id,
                     total = o.Total,
-                    items = o.Items,
+                    items = o.Items.Select(i => new
+                    {
+                        i.Quantity,
+                        Phone = new
+                        {
+                            brand = i.Phone.Brand.Name,
+                            model = i.Phone.Model.Name,
+                            color = i.Phone.Color.Name,
+                            imagePath = i.Phone.ImagePath
+                        },
+                    }),
                     createdAt = o.CreatedAt
                 }));
             }
@@ -47,10 +67,14 @@ namespace Api.Controllers
                     return BadRequest(new { message = "Cart is empty." });
                 }
 
-                var order = new Order { User = user, Items = user.Cart!.Items.Count(), Total = request.Total };
-
+                var order = new Order { User = user, Total = request.Total };
                 _context.Orders.Add(order);
-                _context.Items.RemoveRange(user.Cart.Items);
+
+                user.Cart!.Items.ForEach((item) =>
+                {
+                    item.Order = order;
+                    item.IsOrdered = true;
+                });
 
                 _context.SaveChanges();
 

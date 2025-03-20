@@ -8,5 +8,8 @@
         public int CartId { get; set; }
         public required Cart Cart { get; set; }
         public required int Quantity { get; set; }
+        public int? OrderId { get; set; }
+        public Order? Order { get; set; }
+        public bool IsOrdered { get; set; } = false;
     }
 }
