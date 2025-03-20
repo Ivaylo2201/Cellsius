@@ -30,7 +30,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
       <ToastContainer
-        autoClose={3000}
+        autoClose={2000}
         pauseOnHover={false}
         progressClassName={'text-darkblue'}
         toastStyle={{

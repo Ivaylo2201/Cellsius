@@ -5,12 +5,13 @@ export default function usePlaceOrder() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (total: number) => {
-      const res = await http.post('/order/place', { total });
+    mutationFn: async (shippingId: number) => {
+      const res = await http.post('/order/place', { shippingId });
       return res.data
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['cart'] });
+      queryClient.invalidateQueries({ queryKey: ['orders'] });
     }
   })
 }

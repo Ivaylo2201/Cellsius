@@ -13,6 +13,7 @@ namespace Api
         public DbSet<Cart> Carts => Set<Cart>();
         public DbSet<Item> Items => Set<Item>();
         public DbSet<Order> Orders => Set<Order>();
+        public DbSet<Shipping> Shippings => Set<Shipping>();
 
         protected void Seed(ModelBuilder modelBuilder)
         {
@@ -32,6 +33,13 @@ namespace Api
 
             modelBuilder.Entity<User>().HasData(user);
             modelBuilder.Entity<Cart>().HasData(cart);
+
+            modelBuilder.Entity<Shipping>().HasData(
+                new Shipping { Id = 1, Type = "Standard", Cost = 0, Days = 7 },
+                new Shipping { Id = 2, Type = "Express", Cost = 15, Days = 3 },
+                new Shipping { Id = 3, Type = "Next-Day", Cost = 25, Days = 1 },
+                new Shipping { Id = 4, Type = "Same-Day", Cost = 40, Days = 0 }
+            );
 
             modelBuilder.Entity<Brand>().HasData(
                 new Brand { Id = 1, Name = "Samsung" },

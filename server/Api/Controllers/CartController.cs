@@ -57,9 +57,11 @@ namespace Api.Controllers
                                             .ThenInclude(p => p.Color)
                                             .FirstOrDefault();
 
+                var items = cart!.Items.Where(i => i.IsOrdered == false);
+
                 return Ok(new
                 {
-                    items = cart!.Items.Where(i => i.IsOrdered == false).Select(i => new
+                    items = items.Select(i => new
                     {
                         i.Id,
                         i.Quantity,
@@ -75,7 +77,7 @@ namespace Api.Controllers
                         },
                         price = i.Quantity * i.Phone.Price
                     }),
-                    subtotal = cart.Items.Select(i => i.Phone.Price * i.Quantity).Sum()
+                    subtotal = items.Select(i => i.Phone.Price * i.Quantity).Sum()
                 });                
             }
             else

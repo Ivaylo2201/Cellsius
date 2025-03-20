@@ -14,7 +14,8 @@ namespace Api.Controllers
             return Ok(new
             {
                 Brands = _context.Brands.Select(b => new { b.Id, b.Name }).ToList(),
-                Colors = _context.Colors.Select(c => new { c.Id, c.Name }).ToList()
+                Colors = _context.Colors.Select(c => new { c.Id, c.Name }).ToList(),
+                Shippings = _context.Shippings.Select(s => new { s.Id, s.Type, s.Cost, s.Days }).ToList()
             });
         }
 

@@ -13,22 +13,29 @@ namespace Api.Controllers
     {
         private readonly DatabaseContext _context = context;
 
+        private IEnumerable<Item> getUnorderedItems(User user)
+        {
+            return user.Cart!.Items.Where(i => i.IsOrdered == false);
+        }
+
         [HttpGet]
         [Authorize]
         public IActionResult GetOrders()
         {
+
             if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
             {
-                var orders = _context.Orders.Include(c => c.Items)
+                var orders = _context.Orders.Include(o => o.Items)
                                                 .ThenInclude(i => i.Phone)
                                                 .ThenInclude(p => p.Brand)
-                                            .Include(c => c.Items)
+                                            .Include(o => o.Items)
                                                 .ThenInclude(i => i.Phone)
                                                 .ThenInclude(p => p.Model)
-                                            .Include(c => c.Items)
+                                            .Include(o => o.Items)
                                                 .ThenInclude(i => i.Phone)
                                                 .ThenInclude(p => p.Color)
-                                            .Where(o => o.UserId == userId);
+                                            .Include(o => o.Shipping)
+                                                .Where(o => o.UserId == userId);
 
                 return Ok(orders.Select(o => new
                 {
@@ -41,11 +48,12 @@ namespace Api.Controllers
                         {
                             brand = i.Phone.Brand.Name,
                             model = i.Phone.Model.Name,
-                            color = i.Phone.Color.Name,
-                            imagePath = i.Phone.ImagePath
+                            imagePath = i.Phone.ImagePath,
                         },
+                        price = i.Quantity * i.Phone.Price
                     }),
-                    createdAt = o.CreatedAt
+                    createdAt = o.CreatedAt,
+                    shipping = o.Shipping
                 }));
             }
             else
@@ -60,21 +68,34 @@ namespace Api.Controllers
         {
             if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
             {
-                var user = _context.Users.Include(u => u.Cart).ThenInclude(c => c!.Items).Where(u => u.Id == userId).FirstOrDefault()!;
+                var user = _context.Users.Include(u => u.Cart)
+                                         .ThenInclude(c => c!.Items)
+                                         .ThenInclude(i => i.Phone)
+                                         .Where(u => u.Id == userId)
+                                         .FirstOrDefault()!;
+
+                var shipping = _context.Shippings.Where(s => s.Id == request.ShippingId).FirstOrDefault()!;
 
                 if (user.Cart!.Items.Count() == 0)
                 {
                     return BadRequest(new { message = "Cart is empty." });
                 }
 
-                var order = new Order { User = user, Total = request.Total };
+                var order = new Order { 
+                    User = user,
+                    Shipping = shipping,
+                    Total = this.getUnorderedItems(user).Sum(i => i.Quantity * i.Phone.Price) + shipping.Cost
+                };
+
                 _context.Orders.Add(order);
 
-                user.Cart!.Items.ForEach((item) =>
-                {
-                    item.Order = order;
-                    item.IsOrdered = true;
-                });
+                this.getUnorderedItems(user)
+                    .ToList()
+                    .ForEach((item) =>
+                    {
+                        item.Order = order;
+                        item.IsOrdered = true;
+                    });
 
                 _context.SaveChanges();
 

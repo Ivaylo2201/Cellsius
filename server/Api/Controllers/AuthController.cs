@@ -69,7 +69,7 @@ namespace Api.Controllers
             if (!BCrypt.Net.BCrypt.Verify(request.Password, user.Password))
                 return BadRequest(new { message = "Invalid password." });
 
-            var items = user.Cart!.Items.Select(i => new
+            var items = user.Cart!.Items.Where(i => i.IsOrdered == false).Select(i => new
             {
                 price = i.Phone.Price
             });

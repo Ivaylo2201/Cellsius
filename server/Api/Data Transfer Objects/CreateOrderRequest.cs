@@ -4,7 +4,7 @@ namespace Api.Data_Transfer_Objects
 {
     public class CreateOrderRequest
     {
-        [Required(ErrorMessage = "Total is required.")]
-        public int Total { get; set; }
+        [Required(ErrorMessage = "Shipping Id is required.")]
+        public int ShippingId { get; set; }
     }
 }

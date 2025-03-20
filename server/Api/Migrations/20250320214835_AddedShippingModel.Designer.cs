@@ -3,6 +3,7 @@ using System;
 using Api;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20250320214835_AddedShippingModel")]
+    partial class AddedShippingModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.2");
@@ -386,9 +389,6 @@ namespace Api.Migrations
                     b.Property<int>("Cost")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Days")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -402,29 +402,25 @@ namespace Api.Migrations
                         {
                             Id = 1,
                             Cost = 0,
-                            Days = 7,
                             Type = "Standard"
                         },
                         new
                         {
                             Id = 2,
                             Cost = 15,
-                            Days = 3,
                             Type = "Express"
                         },
                         new
                         {
                             Id = 3,
                             Cost = 25,
-                            Days = 1,
-                            Type = "Next-Day"
+                            Type = "Same-Day"
                         },
                         new
                         {
                             Id = 4,
                             Cost = 40,
-                            Days = 0,
-                            Type = "Same-Day"
+                            Type = "Next-Day"
                         });
                 });
 
