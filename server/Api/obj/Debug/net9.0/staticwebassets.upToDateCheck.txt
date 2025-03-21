@@ -1,3 +1,5 @@
+wwwroot\uploads\3f761a22-fd05-4942-8e81-7908ee0338e1.PNG
+wwwroot\uploads\74aaee68-8724-43e9-979f-504c7b15021a.PNG
 wwwroot\uploads\apple-iphone-15.jpg
 wwwroot\uploads\apple-iphone-16promax.jpg
 wwwroot\uploads\samsung-galaxy-a16.jpg

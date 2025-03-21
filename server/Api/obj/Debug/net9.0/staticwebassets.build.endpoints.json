@@ -3,6 +3,170 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.9v574t3bj8.PNG",
+      "AssetFile": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3381"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 19:26:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9v574t3bj8"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.PNG"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.PNG",
+      "AssetFile": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3381"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 19:26:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/74aaee68-8724-43e9-979f-504c7b15021a.9v574t3bj8.PNG",
+      "AssetFile": "uploads/74aaee68-8724-43e9-979f-504c7b15021a.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3381"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 19:23:17 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9v574t3bj8"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/74aaee68-8724-43e9-979f-504c7b15021a.PNG"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/74aaee68-8724-43e9-979f-504c7b15021a.PNG",
+      "AssetFile": "uploads/74aaee68-8724-43e9-979f-504c7b15021a.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3381"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 19:23:17 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU="
+        }
+      ]
+    },
+    {
       "Route": "uploads/apple-iphone-15.4levyhq0bm.jpg",
       "AssetFile": "uploads/apple-iphone-15.jpg",
       "Selectors": [],

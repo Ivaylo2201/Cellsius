@@ -65,28 +65,13 @@ namespace Api.Controllers
                                          .ThenInclude(i => i.Phone)
                                          .ThenInclude(p => p.Color)
                                      .Where(c => c.UserId == userId)
-                                         .Single();
+                                     .Single();
 
             var items = cart!.Items;
 
             return Ok(new
             {
-                items = items.Select(i => new
-                {
-                    i.Id,
-                    i.Quantity,
-                    Phone = new
-                    {
-                        id = i.Phone.Id,
-                        brand = i.Phone.Brand.Name,
-                        model = i.Phone.Model.Name,
-                        color = i.Phone.Color.Name,
-                        price = i.Phone.Price,
-                        memory = i.Phone.Memory,
-                        imagePath = i.Phone.ImagePath
-                    },
-                    price = i.Quantity * i.Phone.Price
-                }),
+                items = items.Select(i => GetItemData(i)),
                 subtotal = items.Sum(i => i.Phone.Price * i.Quantity)
             });
         }        
@@ -148,6 +133,31 @@ namespace Api.Controllers
             _context.SaveChanges();
 
             return NoContent();
+        }
+
+        private static object GetItemData(Item i)
+        {
+            return new
+            {
+                i.Id,
+                i.Quantity,
+                Phone = GetPhoneData(i.Phone),
+                price = i.Quantity * i.Phone.Price
+            };
+        }
+
+        private static object GetPhoneData(Phone p)
+        {
+            return new
+            {
+                id = p.Id,
+                brand = p.Brand.Name,
+                model = p.Model.Name,
+                color = p.Color.Name,
+                price = p.Price,
+                memory = p.Memory,
+                imagePath = p.ImagePath
+            };
         }
     }
 }

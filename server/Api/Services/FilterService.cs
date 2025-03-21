@@ -26,7 +26,7 @@ namespace Api.Services
         {
             if (!string.IsNullOrEmpty(modelName))
             {
-                this.query = this.query.Where(p => EF.Functions.Like(p.Model.Name, modelName));
+                this.query = this.query.Where(p => EF.Functions.Like(p.Model.Name, $"%{modelName}%"));
             }
 
             return this;
@@ -59,7 +59,7 @@ namespace Api.Services
             {
                 this.query = this.query.Where(
                     p => EF.Functions.Like(p.Brand.Name, search) ||
-                         EF.Functions.Like(p.Model.Name, search) ||
+                         EF.Functions.Like(p.Model.Name, $"%{search}%") ||
                          EF.Functions.Like(p.Color.Name, search)
                 );
             }

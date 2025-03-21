@@ -18,28 +18,33 @@ namespace Api.Controllers
         {
             this.EnsureUploadDirExists();
 
-            var phone = new Phone
+            try
             {
-                BrandId = request.BrandId,
-                ModelId = request.ModelId,
-                ColorId = request.ColorId,
-                Price = request.Price,
-                Memory = request.Memory,
-                ImagePath = $"/uploads/{
-                    this.UploadImage(
+                var phone = new Phone
+                {
+                    BrandId = request.BrandId,
+                    ModelId = request.ModelId,
+                    ColorId = request.ColorId,
+                    Price = request.Price,
+                    Memory = request.Memory,
+                    ImagePath = $"/uploads/{this.UploadImage(
                         request.Image!,
                         $"{Guid.NewGuid()}{Path.GetExtension(request.Image!.FileName)}"
-                    )
-                }"
-            };
+                    )}"
+                };
 
-            _context.Phones.Add(phone);
-            _context.SaveChanges();
+                _context.Phones.Add(phone);
+                _context.SaveChanges();
 
-            return CreatedAtAction(
-                nameof(CreatePhone),
-                new { message = "Phone created successfully." }
-            );
+                return CreatedAtAction(
+                    nameof(CreatePhone),
+                    new { message = "Phone created successfully." }
+                );
+            }
+            catch (DbUpdateException)
+            {
+                return BadRequest(new { message = "Foreign key constraint failed." });
+            }
         }
 
         [HttpGet]
@@ -54,19 +59,7 @@ namespace Api.Controllers
             var filteredQuery = GetFilteredQuery(query, search, brand, model, color, price);
             var orderedQuery = GetOrderedQuery(filteredQuery, sort);
 
-            var phones = orderedQuery.Select(p => new
-            {
-                p.Id,
-                Brand = p.Brand.Name,
-                Model = p.Model.Name,
-                Color = p.Color.Name,
-                p.Price,
-                p.Memory,
-                p.ImagePath,
-            })
-            .ToList();
-
-            return Ok(phones);
+            return Ok(ConvertToList(orderedQuery));
         }
 
         private void EnsureUploadDirExists()
@@ -107,10 +100,24 @@ namespace Api.Controllers
         {
             if (sort == "asc")
             {
-                return query.OrderBy(p => p.Price);
+                return query.OrderBy(p => (double)p.Price);
             }
 
-            return query.OrderByDescending(p => p.Price);
-        }        
+            return query.OrderByDescending(p => (double)p.Price);
+        }
+        
+        private static IEnumerable<dynamic> ConvertToList(IQueryable<Phone> query)
+        {
+            return query.Select(p => new
+            {
+                p.Id,
+                Brand = p.Brand.Name,
+                Model = p.Model.Name,
+                Color = p.Color.Name,
+                p.Price,
+                p.Memory,
+                p.ImagePath,
+            }).ToList();
+        }
     }
 }

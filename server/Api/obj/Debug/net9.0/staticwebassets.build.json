@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m0h/5efMfYasaAqMwV+Rjpi8GcXbKoz/LCwPFPPR0X8=",
+  "Hash": "Z10UH1FMZLmIyxvpI06xPA7wU13L9++C/82ab2K/wFk=",
   "Source": "Api",
   "BasePath": "_content/Api",
   "Mode": "Default",
@@ -16,6 +16,48 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\3f761a22-fd05-4942-8e81-7908ee0338e1.PNG",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1#[.{fingerprint}]?.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9v574t3bj8",
+      "Integrity": "i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\3f761a22-fd05-4942-8e81-7908ee0338e1.PNG"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\74aaee68-8724-43e9-979f-504c7b15021a.PNG",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/74aaee68-8724-43e9-979f-504c7b15021a#[.{fingerprint}]?.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9v574t3bj8",
+      "Integrity": "i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\74aaee68-8724-43e9-979f-504c7b15021a.PNG"
+    },
     {
       "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-15.jpg",
       "SourceId": "Api",
@@ -207,6 +249,170 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.9v574t3bj8.PNG",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\3f761a22-fd05-4942-8e81-7908ee0338e1.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3381"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 19:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9v574t3bj8"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.PNG"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.PNG",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\3f761a22-fd05-4942-8e81-7908ee0338e1.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3381"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 19:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/74aaee68-8724-43e9-979f-504c7b15021a.9v574t3bj8.PNG",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\74aaee68-8724-43e9-979f-504c7b15021a.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3381"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 19:23:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9v574t3bj8"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/74aaee68-8724-43e9-979f-504c7b15021a.PNG"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/74aaee68-8724-43e9-979f-504c7b15021a.PNG",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\74aaee68-8724-43e9-979f-504c7b15021a.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3381"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 19:23:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U+7n4QL8fJstYU="
+        }
+      ]
+    },
     {
       "Route": "uploads/apple-iphone-15.4levyhq0bm.jpg",
       "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-15.jpg",

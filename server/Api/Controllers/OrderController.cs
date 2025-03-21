@@ -39,29 +39,7 @@ namespace Api.Controllers
                                         .Include(o => o.Shipping)
                                         .Where(o => o.UserId == userId);
 
-            return Ok(orders.Select(o => new
-            {
-                o.Id,
-                o.Total,
-                items = o.Items.Select(i => new
-                {
-                    i.Quantity,
-                    Phone = new
-                    {
-                        brand = i.Phone.Brand.Name,
-                        model = i.Phone.Model.Name,
-                        imagePath = i.Phone.ImagePath,
-                    },
-                    price = i.Quantity * i.Phone.Price
-                }),
-                o.CreatedAt,
-                shipping = new
-                {
-                    o.Shipping.Type,
-                    o.Shipping.Cost,
-                    o.Shipping.Days
-                }
-            }));
+            return Ok(orders.Select(o => GetOrderData(o)));
         }
 
         [HttpPost("place")]
@@ -117,6 +95,39 @@ namespace Api.Controllers
                     message = "Order successfully placed!"
                 }
             );            
+        }
+
+        private static object GetItemData(Item i)
+        {
+            return new
+            {
+                i.Id,
+                i.Quantity,
+                Phone = new
+                {
+                    brand = i.Phone.Brand.Name,
+                    model = i.Phone.Model.Name,
+                    imagePath = i.Phone.ImagePath,
+                },
+                price = i.Quantity * i.Phone.Price
+            };
+        }
+
+        private static object GetOrderData(Order o)
+        {
+            return new
+            {
+                o.Id,
+                o.Total,
+                items = o.Items.Select(i => GetItemData(i)),
+                o.CreatedAt,
+                shipping = new
+                {
+                    o.Shipping.Type,
+                    o.Shipping.Cost,
+                    o.Shipping.Days
+                }
+            };
         }
     }
 }
