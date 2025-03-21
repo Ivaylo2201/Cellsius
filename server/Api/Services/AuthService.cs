@@ -10,6 +10,16 @@ namespace Api.Services
     {
         private readonly IConfiguration _config = config;
 
+        public static int? DecodeIdFromToken(Claim? claim)
+        {
+            if (claim != null && int.TryParse(claim.Value, out int id))
+            {
+                return id;
+            }
+
+            return null;
+        }
+
         public string GenerateToken(User user)
         {
             var jwtSettings = _config.GetSection("Jwt");

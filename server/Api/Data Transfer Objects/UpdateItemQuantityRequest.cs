@@ -1,6 +1,6 @@
 ﻿namespace Api.Data_Transfer_Objects
 {
-    public class UpdateQuantityRequest
+    public class UpdateItemQuantityRequest
     {
         public int Quantity { get; set; }
     }

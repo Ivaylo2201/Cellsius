@@ -1,5 +1,8 @@
 ﻿using Api.Data_Transfer_Objects;
+using Api.enums;
 using Api.Models;
+using Api.Services;
+using Api.utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,98 +16,107 @@ namespace Api.Controllers
     {
         private readonly DatabaseContext _context = context;
 
-        private IEnumerable<Item> getUnorderedItems(User user)
-        {
-            return user.Cart!.Items.Where(i => i.IsOrdered == false);
-        }
-
         [HttpGet]
         [Authorize]
         public IActionResult GetOrders()
         {
+            int? userId = AuthService.DecodeIdFromToken(User.FindFirst(ClaimTypes.NameIdentifier));
 
-            if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
+            if (userId is null)
             {
-                var orders = _context.Orders.Include(o => o.Items)
-                                                .ThenInclude(i => i.Phone)
-                                                .ThenInclude(p => p.Brand)
-                                            .Include(o => o.Items)
-                                                .ThenInclude(i => i.Phone)
-                                                .ThenInclude(p => p.Model)
-                                            .Include(o => o.Items)
-                                                .ThenInclude(i => i.Phone)
-                                                .ThenInclude(p => p.Color)
-                                            .Include(o => o.Shipping)
-                                                .Where(o => o.UserId == userId);
+                return Unauthorized(ErrorMessage.GetMessageObject(ErrorType.InvalidToken));
+            }
 
-                return Ok(orders.Select(o => new
+            var orders = _context.Orders.Include(o => o.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Brand)
+                                        .Include(o => o.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Model)
+                                        .Include(o => o.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Color)
+                                        .Include(o => o.Shipping)
+                                        .Where(o => o.UserId == userId);
+
+            return Ok(orders.Select(o => new
+            {
+                o.Id,
+                o.Total,
+                items = o.Items.Select(i => new
                 {
-                    id = o.Id,
-                    total = o.Total,
-                    items = o.Items.Select(i => new
+                    i.Quantity,
+                    Phone = new
                     {
-                        i.Quantity,
-                        Phone = new
-                        {
-                            brand = i.Phone.Brand.Name,
-                            model = i.Phone.Model.Name,
-                            imagePath = i.Phone.ImagePath,
-                        },
-                        price = i.Quantity * i.Phone.Price
-                    }),
-                    createdAt = o.CreatedAt,
-                    shipping = o.Shipping
-                }));
-            }
-            else
-            {
-                return BadRequest(new { message = "Something went wrong." });
-            }
+                        brand = i.Phone.Brand.Name,
+                        model = i.Phone.Model.Name,
+                        imagePath = i.Phone.ImagePath,
+                    },
+                    price = i.Quantity * i.Phone.Price
+                }),
+                o.CreatedAt,
+                shipping = new
+                {
+                    o.Shipping.Type,
+                    o.Shipping.Cost,
+                    o.Shipping.Days
+                }
+            }));
         }
 
         [HttpPost("place")]
         [Authorize]
         public IActionResult CreateOrder([FromBody] CreateOrderRequest request)
         {
-            if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
+            int? userId = AuthService.DecodeIdFromToken(User.FindFirst(ClaimTypes.NameIdentifier));
+
+            if (userId is null)
             {
-                var user = _context.Users.Include(u => u.Cart)
-                                         .ThenInclude(c => c!.Items)
+                return Unauthorized(ErrorMessage.GetMessageObject(ErrorType.InvalidToken));
+            }
+
+            var user = _context.Users.Include(u => u.Cart!)
+                                         .ThenInclude(c => c.Items)
                                          .ThenInclude(i => i.Phone)
-                                         .Where(u => u.Id == userId)
-                                         .FirstOrDefault()!;
+                                     .Where(u => u.Id == userId)
+                                     .Single();
 
-                var shipping = _context.Shippings.Where(s => s.Id == request.ShippingId).FirstOrDefault()!;
+            var shipping = _context.Shippings.Where(s => s.Id == request.ShippingId)
+                                             .Single();
 
-                if (user.Cart!.Items.Count() == 0)
-                {
-                    return BadRequest(new { message = "Cart is empty." });
-                }
-
-                var order = new Order { 
-                    User = user,
-                    Shipping = shipping,
-                    Total = this.getUnorderedItems(user).Sum(i => i.Quantity * i.Phone.Price) + shipping.Cost
-                };
-
-                _context.Orders.Add(order);
-
-                this.getUnorderedItems(user)
-                    .ToList()
-                    .ForEach((item) =>
-                    {
-                        item.Order = order;
-                        item.IsOrdered = true;
-                    });
-
-                _context.SaveChanges();
-
-                return CreatedAtAction(nameof(CreateOrder), new { message = "Order successfully placed!" });
-            }
-            else
+            if (user is null || shipping is null)
             {
-                return BadRequest(new { message = "Something went wrong." });
+                return NotFound(ErrorMessage.GetMessageObject(ErrorType.NotFound));
             }
+
+            if (user.Cart!.Items.Count == 0)
+            {
+                return BadRequest(new { message = "Cannot create an order from an empty cart." });
+            }
+
+            var order = new Order
+            {
+                User = user,
+                Shipping = shipping,
+                Total = user.Cart.Items.Sum(i => i.Quantity * i.Phone.Price) + shipping.Cost
+            };
+
+            _context.Orders.Add(order);
+
+            user.Cart.Items.ToList().ForEach((i) =>
+            {
+                i.Order = order;
+                i.Cart = null;
+            });
+
+            _context.SaveChanges();
+
+            return CreatedAtAction(
+                nameof(CreateOrder),
+                new { 
+                    message = "Order successfully placed!"
+                }
+            );            
         }
     }
 }

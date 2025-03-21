@@ -20,6 +20,6 @@ namespace Api.Data_Transfer_Objects
         public int Memory { get; set; }
 
         [Required(ErrorMessage = "Image is required.")]
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
     }
 }

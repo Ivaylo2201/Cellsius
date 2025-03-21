@@ -3,6 +3,7 @@ using System;
 using Api;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20250321082959_FkManagementForUserCartAndItem")]
+    partial class FkManagementForUserCartAndItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.2");
@@ -578,7 +581,8 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Models.User", b =>
                 {
-                    b.Navigation("Cart");
+                    b.Navigation("Cart")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

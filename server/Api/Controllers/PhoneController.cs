@@ -1,5 +1,6 @@
 ﻿using Api.Data_Transfer_Objects;
 using Api.Models;
+using Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,55 +16,45 @@ namespace Api.Controllers
         [HttpPost]
         public IActionResult CreatePhone([FromForm] CreatePhoneRequest request)
         {
-            try
+            this.EnsureUploadDirExists();
+
+            var phone = new Phone
             {
-                if (string.IsNullOrEmpty(_env.WebRootPath))
-                {
-                    _env.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-                }
+                BrandId = request.BrandId,
+                ModelId = request.ModelId,
+                ColorId = request.ColorId,
+                Price = request.Price,
+                Memory = request.Memory,
+                ImagePath = $"/uploads/{
+                    this.UploadImage(
+                        request.Image!,
+                        $"{Guid.NewGuid()}{Path.GetExtension(request.Image!.FileName)}"
+                    )
+                }"
+            };
 
-                var uploadsDir = Path.Combine(_env.WebRootPath, "uploads");
+            _context.Phones.Add(phone);
+            _context.SaveChanges();
 
-                if (!Directory.Exists(uploadsDir))
-                {
-                    Directory.CreateDirectory(uploadsDir);
-                }
-
-                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(request.Image.FileName)}";
-                var filePath = Path.Combine(_env.WebRootPath, "uploads", fileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    request.Image.CopyTo(stream);
-                }
-
-                var phone = new Phone
-                {
-                    BrandId = request.BrandId,
-                    ModelId = request.ModelId,
-                    ColorId = request.ColorId,
-                    Price = request.Price,
-                    Memory = request.Memory,
-                    ImagePath = $"/uploads/{fileName}"
-                };
-
-                _context.Phones.Add(phone);
-                _context.SaveChanges();
-
-                return CreatedAtAction(nameof(CreatePhone), new { message = "Phone created successfully." });
-            }
-            catch (DbUpdateException e)
-            {
-                return BadRequest(new { message = "An error has occurred." });
-            }
+            return CreatedAtAction(
+                nameof(CreatePhone),
+                new { message = "Phone created successfully." }
+            );
         }
 
         [HttpGet]
-        public IActionResult GetPublicPhones([FromQuery] string? brand, string? model, string? color, decimal? max, string? search, string? sort = "asc")
+        public IActionResult GetPhones([FromQuery] string? brand, string? model, string? color, decimal? price, string? search, string? sort = "asc")
         {
-            var query = this.GetPhones(brand, model, color, max, sort, search);
+            var query = _context.Phones
+                    .Include(p => p.Brand)
+                    .Include(p => p.Model)
+                    .Include(p => p.Color)
+                    .AsQueryable();
 
-            var phones = query.Select(p => new
+            var filteredQuery = GetFilteredQuery(query, search, brand, model, color, price);
+            var orderedQuery = GetOrderedQuery(filteredQuery, sort);
+
+            var phones = orderedQuery.Select(p => new
             {
                 p.Id,
                 Brand = p.Brand.Name,
@@ -78,34 +69,48 @@ namespace Api.Controllers
             return Ok(phones);
         }
 
-        private IQueryable<Phone> GetPhones(string? brand, string? model, string? color, decimal? max, string? sort, string? search)
+        private void EnsureUploadDirExists()
         {
-            var query = _context.Phones
-                    .Include(p => p.Brand)
-                    .Include(p => p.Model)
-                    .Include(p => p.Color)
-                    .AsQueryable();
+            if (string.IsNullOrEmpty(_env.WebRootPath))
+            {
+                _env.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            }
 
-            if (!string.IsNullOrEmpty(search))
-                query = query.Where(p => p.Brand.Name.ToLower().Contains(search.ToLower()) || p.Model.Name.ToLower().Contains(search.ToLower()));
+            var uploadsDir = Path.Combine(_env.WebRootPath, "uploads");
 
-            if (!string.IsNullOrEmpty(brand))
-                query = query.Where(p => p.Brand.Name.ToLower().Contains(brand.ToLower()));
-
-            if (!string.IsNullOrEmpty(model))
-                query = query.Where(p => p.Model.Name.ToLower().Contains(model.ToLower()));
-
-            if (!string.IsNullOrEmpty(color))
-                query = query.Where(p => p.Color.Name.ToLower().Contains(color.ToLower()));
-
-            if (max.HasValue)
-                query = query.Where(p => p.Price <= max.Value);
-
-
-            query = sort == "asc" ? query.OrderBy(p => ((double)p.Price)) :
-                                    query.OrderByDescending(p => ((double)p.Price));
-
-            return query;
+            if (!Directory.Exists(uploadsDir))
+            {
+                Directory.CreateDirectory(uploadsDir);
+            }
         }
+
+        private string UploadImage(IFormFile file, string fileName)
+        {
+            var filePath = Path.Combine(_env.WebRootPath, "uploads", fileName);
+            using var stream = new FileStream(filePath, FileMode.Create);
+            file.CopyTo(stream);
+
+            return fileName;
+        }
+
+        private static IQueryable<Phone> GetFilteredQuery(IQueryable<Phone> query, string? search, string? brand, string? model, string? color, decimal? price)
+        {
+            return new FilterService(query).BySearch(search)
+                                           .ByBrand(brand)
+                                           .ByModel(model)
+                                           .ByColor(color)
+                                           .ByPrice(price)
+                                           .GetQuery();
+        }
+
+        private static IQueryable<Phone> GetOrderedQuery(IQueryable<Phone> query, string? sort)
+        {
+            if (sort == "asc")
+            {
+                return query.OrderBy(p => p.Price);
+            }
+
+            return query.OrderByDescending(p => p.Price);
+        }        
     }
 }

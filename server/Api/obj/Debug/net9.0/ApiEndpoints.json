@@ -72,7 +72,7 @@
       },
       {
         "Name": "request",
-        "Type": "Api.Data_Transfer_Objects.UpdateQuantityRequest",
+        "Type": "Api.Data_Transfer_Objects.UpdateItemQuantityRequest",
         "IsRequired": true
       }
     ],
@@ -189,7 +189,7 @@
   },
   {
     "ContainingType": "Api.Controllers.PhoneController",
-    "Method": "GetPublicPhones",
+    "Method": "GetPhones",
     "RelativePath": "api/Phone",
     "HttpMethod": "GET",
     "IsController": true,
@@ -211,7 +211,7 @@
         "IsRequired": false
       },
       {
-        "Name": "max",
+        "Name": "price",
         "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },

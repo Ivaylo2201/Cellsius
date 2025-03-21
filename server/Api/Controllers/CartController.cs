@@ -1,10 +1,12 @@
 ﻿using Api.Data_Transfer_Objects;
+using Api.enums;
 using Api.Models;
+using Api.Services;
+using Api.utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using System.Text.Json;
 
 namespace Api.Controllers
 {
@@ -16,97 +18,111 @@ namespace Api.Controllers
 
         [HttpPatch("item/{id}")]
         [Authorize]
-        public IActionResult UpdateItemQuantity([FromRoute] int id, [FromBody] UpdateQuantityRequest request)
+        public IActionResult UpdateItemQuantity([FromRoute] int id, [FromBody] UpdateItemQuantityRequest request)
         {
-            if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int userId))
+            int? userId = AuthService.DecodeIdFromToken(User.FindFirst(ClaimTypes.NameIdentifier));
+
+            if (userId is null)
             {
-                var item = _context.Items.Where(i => i.Id == id).FirstOrDefault();
-                var cart = _context.Carts.Where(c => c.UserId == userId).FirstOrDefault();
-
-                if (item!.CartId != cart!.Id)
-                {
-                    return Forbid();
-                }
-
-                item.Quantity = request.Quantity;
-                _context.SaveChanges();
-
-                return Ok(new { message = $"Item {id} quantity updated to {request.Quantity}" });
+                return Unauthorized(ErrorMessage.GetMessageObject(ErrorType.InvalidToken));
             }
-            else
+
+            var item = _context.Items.Where(i => i.Id == id)
+                                     .Single();
+
+            var cart = _context.Carts.Where(c => c.UserId == userId)
+                                     .Single();
+
+            if (item.CartId != cart.Id)
             {
-                return BadRequest(new { message = "Something went wrong." });
+                return Forbid();
             }
+
+            item.Quantity = request.Quantity;
+            _context.SaveChanges();
+
+            return Ok(new { message = $"Item {id} quantity updated to {request.Quantity}" });
         }
 
         [HttpGet]
         [Authorize]
         public IActionResult GetCartItems()
         {
-            if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int id))
+            int? userId = AuthService.DecodeIdFromToken(User.FindFirst(ClaimTypes.NameIdentifier));
+
+            if (userId is null)
             {
-                var cart = _context.Carts.Where(c => c.Id == id)
-                                        .Include(c => c.Items)
-                                            .ThenInclude(i => i.Phone)
-                                            .ThenInclude(p => p.Brand)
-                                        .Include(c => c.Items)
-                                            .ThenInclude(i => i.Phone)
-                                            .ThenInclude(p => p.Model)
-                                        .Include(c => c.Items)
-                                            .ThenInclude(i => i.Phone)
-                                            .ThenInclude(p => p.Color)
-                                            .FirstOrDefault();
+                return Unauthorized(ErrorMessage.GetMessageObject(ErrorType.InvalidToken));
+            }
 
-                var items = cart!.Items.Where(i => i.IsOrdered == false);
+            var cart = _context.Carts.Include(c => c.Items)
+                                         .ThenInclude(i => i.Phone)
+                                         .ThenInclude(p => p.Brand)
+                                     .Include(c => c.Items)
+                                         .ThenInclude(i => i.Phone)
+                                         .ThenInclude(p => p.Model)
+                                     .Include(c => c.Items)
+                                         .ThenInclude(i => i.Phone)
+                                         .ThenInclude(p => p.Color)
+                                     .Where(c => c.UserId == userId)
+                                         .Single();
 
-                return Ok(new
+            var items = cart!.Items;
+
+            return Ok(new
+            {
+                items = items.Select(i => new
                 {
-                    items = items.Select(i => new
+                    i.Id,
+                    i.Quantity,
+                    Phone = new
                     {
-                        i.Id,
-                        i.Quantity,
-                        Phone = new
-                        {
-                            id = i.Phone.Id,
-                            brand = i.Phone.Brand.Name,
-                            model = i.Phone.Model.Name,
-                            color = i.Phone.Color.Name,
-                            price = i.Phone.Price,
-                            memory = i.Phone.Memory,
-                            imagePath = i.Phone.ImagePath
-                        },
-                        price = i.Quantity * i.Phone.Price
-                    }),
-                    subtotal = items.Select(i => i.Phone.Price * i.Quantity).Sum()
-                });                
-            }
-            else
-            {
-                return BadRequest(new { message = "Something went wrong." });
-            }
-        }
+                        id = i.Phone.Id,
+                        brand = i.Phone.Brand.Name,
+                        model = i.Phone.Model.Name,
+                        color = i.Phone.Color.Name,
+                        price = i.Phone.Price,
+                        memory = i.Phone.Memory,
+                        imagePath = i.Phone.ImagePath
+                    },
+                    price = i.Quantity * i.Phone.Price
+                }),
+                subtotal = items.Sum(i => i.Phone.Price * i.Quantity)
+            });
+        }        
 
         [HttpPost]
         [Authorize]
         [Route("add")]
         public IActionResult AddPhoneToCart([FromBody] AddPhoneToCartRequest request)
         {
-            if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int id))
+            int? userId = AuthService.DecodeIdFromToken(User.FindFirst(ClaimTypes.NameIdentifier));
+
+            if (userId == null)
             {
-                var user = _context.Users.Include(u => u.Cart).Where(u => u.Id == id).FirstOrDefault();
-                var phone = _context.Phones.Where(p => p.Id == request.PhoneId).FirstOrDefault()!;
-
-                var item = new Item { Phone = phone, Cart = user!.Cart!, Quantity = 1, Order = null };
-
-                _context.Items.Add(item);
-                _context.SaveChanges();
-
-                return CreatedAtAction(nameof(AddPhoneToCart), new { message = $"Item added to {user.Username}'s cart." });
+                return Unauthorized(ErrorMessage.GetMessageObject(ErrorType.InvalidToken));
             }
-            else
-            {
-                return BadRequest(new { message = "Something went wrong." });
-            }
+
+            var cart = _context.Users.Include(u => u.Cart)
+                                     .Where(u => u.Id == userId)
+                                     .Single().Cart;
+
+            var phone = _context.Phones.Where(p => p.Id == request.PhoneId)
+                                       .Single();
+
+            var item = new Item { 
+                Phone = phone, 
+                Cart = cart, 
+                Quantity = 1
+            };
+
+            _context.Items.Add(item);
+            _context.SaveChanges();
+
+            return CreatedAtAction(
+                nameof(AddPhoneToCart),
+                new { message = "Item successfully added." }
+            );
         }
 
         [HttpDelete]
@@ -114,28 +130,24 @@ namespace Api.Controllers
         [Route("remove")]
         public IActionResult RemovePhoneFromCart([FromBody] RemovePhoneFromCartRequest request)
         {
-            if (int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out int id))
+            int? userId = AuthService.DecodeIdFromToken(User.FindFirst(ClaimTypes.NameIdentifier));
+
+            if (userId is null)
             {
-                var user = _context.Users.Include(u => u.Cart).Where(u => u.Id == id).FirstOrDefault();
-
-                if (user == null)
-                    return Unauthorized(new { message = "The provided token was invalid." });
-
-                var item = _context.Items.FirstOrDefault(i => (i.CartId == user.Cart!.Id) && (i.Id == request.ItemId));
-
-                if (item == null)
-                    return NotFound(new { message = "The requested item was not found on the server." });
-
-                _context.Items.Remove(item);
-                _context.SaveChanges();
-
-                return NoContent();
-            }
-            else
-            {
-                return BadRequest(new { message = "Something went wrong." });
+                return Unauthorized(ErrorMessage.GetMessageObject(ErrorType.InvalidToken));
             }
 
+            var cart = _context.Users.Include(u => u.Cart)
+                                     .Where(u => u.Id == userId)
+                                     .Single().Cart;
+
+            var item = _context.Items.Where(i => i.Id == request.ItemId)
+                                     .Single();
+
+            _context.Items.Remove(item);
+            _context.SaveChanges();
+
+            return NoContent();
         }
     }
 }

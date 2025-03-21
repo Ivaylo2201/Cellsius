@@ -4,6 +4,8 @@ using System.Text.RegularExpressions;
 using Api.Services;
 using Api.Data_Transfer_Objects;
 using Microsoft.EntityFrameworkCore;
+using Api.utils;
+using Api.enums;
 
 namespace Api.Controllers
 {
@@ -20,7 +22,7 @@ namespace Api.Controllers
         {
             Regex EmailRegex = new(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.Compiled);
 
-            if (!EmailRegex.IsMatch(request.Email) || _context.Users.Any(u => u.Email == request.Email))
+            if (!EmailRegex.IsMatch(request.Email!) || _context.Users.Any(u => u.Email == request.Email))
                 return BadRequest(new { message = "Invalid email." });
 
             if (_context.Users.Any(u => u.Username == request.Username))
@@ -29,19 +31,22 @@ namespace Api.Controllers
             if (request.Password != request.PasswordConfirmation)
                 return BadRequest(new { message = "Passwords do not match" });
 
-            var user = new User { 
-                Email = request.Email, 
-                Username = request.Username, 
-                Password = BCrypt.Net.BCrypt.HashPassword(request.Password),
-                Cart = new Cart()
+            var user = new User
+            {
+                Email = request.Email!,
+                Username = request.Username!,
+                Password = BCrypt.Net.BCrypt.HashPassword(request.Password)
             };
 
+            var cart = new Cart { User = user };
+
             _context.Users.Add(user);
+            _context.Carts.Add(cart);
+
             _context.SaveChanges();
 
             return CreatedAtAction(
-                nameof(Register), 
-                new { id = user.Id },
+                nameof(Register),
                 new
                 {
                     token = _authService.GenerateToken(user),
@@ -58,19 +63,19 @@ namespace Api.Controllers
         [HttpPost]
         public IActionResult Login([FromBody] LoginUserRequest request)
         {
-            var user = _context.Users.Where(u => u.Email == request.Email)
-                                     .Include(u => u.Cart)
-                                     .ThenInclude(c => c.Items)
-                                     .ThenInclude(i => i.Phone).FirstOrDefault();
+            var user = _context.Users.Include(u => u.Cart!)
+                                         .ThenInclude(c => c.Items)
+                                         .ThenInclude(i => i.Phone)
+                                     .Where(u => u.Email == request.Email)
+                                     .FirstOrDefault();
                                             
             if (user is null)
-                return NotFound(new { message = "User not found." });
+                return NotFound(ErrorMessage.GetMessageObject(ErrorType.NotFound));
 
             if (!BCrypt.Net.BCrypt.Verify(request.Password, user.Password))
-                return BadRequest(new { message = "Invalid password." });
+                return BadRequest(new { message = "The provided password is invalid." });
 
-            var items = user.Cart!.Items.Where(i => i.IsOrdered == false).Select(i => new
-            {
+            var items = user.Cart!.Items.Select(i => new { 
                 price = i.Phone.Price
             });
 

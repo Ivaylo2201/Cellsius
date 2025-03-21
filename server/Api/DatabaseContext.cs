@@ -28,11 +28,11 @@ namespace Api
             var cart = new Cart
             {
                 Id = 1,
-                UserId = 1
+                UserId = user.Id
             };
 
-            modelBuilder.Entity<User>().HasData(user);
             modelBuilder.Entity<Cart>().HasData(cart);
+            modelBuilder.Entity<User>().HasData(user);
 
             modelBuilder.Entity<Shipping>().HasData(
                 new Shipping { Id = 1, Type = "Standard", Cost = 0, Days = 7 },
