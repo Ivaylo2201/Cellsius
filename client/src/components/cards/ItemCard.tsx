@@ -2,25 +2,31 @@ import { useState } from 'react';
 import { Item } from '../../types/Item';
 import QuantityControl from '../miscellaneous/QuantityControl';
 import useUpdateQuantity from '../../hooks/useUpdateQuantity';
+import { X } from 'lucide-react';
+import useRemoveItem from '../../hooks/useRemoveItem';
 
 export default function ItemCard({ id, phone, quantity, price }: Item) {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(quantity);
-  const { mutateAsync } = useUpdateQuantity(id, selectedQuantity);
+  const { mutateAsync: updateQuantity } = useUpdateQuantity(
+    id,
+    selectedQuantity
+  );
+  const { mutateAsync: removeItem } = useRemoveItem();
 
   const imageUrl = `${import.meta.env.VITE_IMAGE_ROOT_URL}${phone.imagePath}`;
 
   const handleQuantityIncrement = async () => {
     setSelectedQuantity((q) => (q + 1 > 10 ? 10 : q + 1));
-    await mutateAsync();
+    await updateQuantity();
   };
 
   const handleQuantityDecrement = async () => {
     setSelectedQuantity((q) => (q - 1 <= 0 ? 1 : q - 1));
-    await mutateAsync();
+    await updateQuantity();
   };
 
   return (
-    <div className='flex justify-between border border-gray-200 rounded-xl py-6 pr-8.5 font-dmsans'>
+    <div className='flex justify-between border border-gray-200 rounded-xl py-6 pr-8.5 font-dmsans relative'>
       <img
         className='h-32 object-cover rounded-lg'
         src={imageUrl}
@@ -41,6 +47,13 @@ export default function ItemCard({ id, phone, quantity, price }: Item) {
         onIncrement={handleQuantityIncrement}
         onDecrement={handleQuantityDecrement}
       />
+
+      <button
+        onClick={() => removeItem(id)}
+        className='rounded-full absolute top-3 right-3 cursor-pointer'
+      >
+        <X size={20} color='var(--color-gray-400)' />
+      </button>
     </div>
   );
 }

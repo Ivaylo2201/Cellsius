@@ -112,8 +112,8 @@ namespace Api.Controllers
 
         [HttpDelete]
         [Authorize]
-        [Route("remove")]
-        public IActionResult RemovePhoneFromCart([FromBody] RemovePhoneFromCartRequest request)
+        [Route("remove/{id}")]
+        public IActionResult RemovePhoneFromCart([FromRoute] int id)
         {
             int? userId = AuthService.DecodeIdFromToken(User.FindFirst(ClaimTypes.NameIdentifier));
 
@@ -126,7 +126,7 @@ namespace Api.Controllers
                                      .Where(u => u.Id == userId)
                                      .Single().Cart;
 
-            var item = _context.Items.Where(i => i.Id == request.ItemId)
+            var item = _context.Items.Where(i => i.Id == id)
                                      .Single();
 
             _context.Items.Remove(item);

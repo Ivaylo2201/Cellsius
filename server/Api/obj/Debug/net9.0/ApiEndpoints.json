@@ -81,14 +81,14 @@
   {
     "ContainingType": "Api.Controllers.CartController",
     "Method": "RemovePhoneFromCart",
-    "RelativePath": "api/Cart/remove",
+    "RelativePath": "api/Cart/remove/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Api.Data_Transfer_Objects.RemovePhoneFromCartRequest",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
