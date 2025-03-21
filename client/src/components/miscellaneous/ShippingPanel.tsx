@@ -1,12 +1,12 @@
-import { Loader, Radio, Stack } from '@mantine/core';
-import Button from '../../ui/Button';
-import { toast } from 'react-toastify';
 import { Suspense, useState } from 'react';
-import usePlaceOrder from '../../hooks/usePlaceOrder';
-import { AxiosError } from 'axios';
 import { useNavigate } from 'react-router';
+import { AxiosError } from 'axios';
+import { Loader, Radio, Stack } from '@mantine/core';
+import { toast } from 'react-toastify';
+import usePlaceOrder from '../../hooks/usePlaceOrder';
 import useServerData from '../../hooks/useServerData';
 import ShippingCalculator from './ShippingCalculator';
+import Button from '../../ui/Button';
 
 type ShippingProps = {
   subtotal: number;

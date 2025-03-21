@@ -1,7 +1,5 @@
-import Page from "../layout/Page";
+import Page from '../layout/Page';
 
 export default function HomePage() {
-  return (
-    <Page></Page>
-  );
-};
+  return <Page></Page>;
+}

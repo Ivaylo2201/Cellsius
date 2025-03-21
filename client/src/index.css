@@ -25,3 +25,9 @@ body {
   color: var(--color-darkblue);
   font-weight: 600;
 }
+
+.Toastify__close-button.Toastify__close-button--light svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}

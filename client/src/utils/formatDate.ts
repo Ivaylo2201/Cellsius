@@ -1,7 +1,4 @@
-export default function formatDate(
-  date: string,
-  mode?: 'long' | 'short'
-) {
+export default function formatDate(date: string, mode?: 'long' | 'short') {
   if (mode === 'long') {
     return new Date(date + 'Z')
       .toLocaleString('en-GB', {

@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { X } from 'lucide-react';
 import { Item } from '../../types/Item';
 import QuantityControl from '../miscellaneous/QuantityControl';
 import useUpdateQuantity from '../../hooks/useUpdateQuantity';
-import { X } from 'lucide-react';
 import useRemoveItem from '../../hooks/useRemoveItem';
 
 export default function ItemCard({ id, phone, quantity, price }: Item) {

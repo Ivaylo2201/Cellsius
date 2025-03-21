@@ -1,29 +1,5 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/Api/uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.9v574t3bj8.PNG">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3f761a22-fd05-4942-8e81-7908ee0338e1.PNG'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9v574t3bj8"},{"Name":"integrity","Value":"sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U\u002B7n4QL8fJstYU="},{"Name":"label","Value":"_content/Api/uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.PNG"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3381"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022i97iPIStC7/gME8hij6Lg1v7YdG35U\u002B7n4QL8fJstYU=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Mar 2025 19:26:58 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Api/uploads/3f761a22-fd05-4942-8e81-7908ee0338e1.PNG">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3f761a22-fd05-4942-8e81-7908ee0338e1.PNG'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U\u002B7n4QL8fJstYU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"3381"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022i97iPIStC7/gME8hij6Lg1v7YdG35U\u002B7n4QL8fJstYU=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Mar 2025 19:26:58 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Api/uploads/74aaee68-8724-43e9-979f-504c7b15021a.9v574t3bj8.PNG">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\74aaee68-8724-43e9-979f-504c7b15021a.PNG'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9v574t3bj8"},{"Name":"integrity","Value":"sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U\u002B7n4QL8fJstYU="},{"Name":"label","Value":"_content/Api/uploads/74aaee68-8724-43e9-979f-504c7b15021a.PNG"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3381"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022i97iPIStC7/gME8hij6Lg1v7YdG35U\u002B7n4QL8fJstYU=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Mar 2025 19:23:17 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Api/uploads/74aaee68-8724-43e9-979f-504c7b15021a.PNG">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\74aaee68-8724-43e9-979f-504c7b15021a.PNG'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-i97iPIStC7/gME8hij6Lg1v7YdG35U\u002B7n4QL8fJstYU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"3381"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022i97iPIStC7/gME8hij6Lg1v7YdG35U\u002B7n4QL8fJstYU=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Mar 2025 19:23:17 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Api/uploads/apple-iphone-15.4levyhq0bm.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\apple-iphone-15.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -95,18 +71,6 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"mu2edhru2b"},{"Name":"integrity","Value":"sha256-ErmzjRo0a4b3Y4J\u002BBhWrXkU8neZtCi\u002Bu0ZiWMSoshPU="},{"Name":"label","Value":"_content/Api/uploads/samsung-galaxy-zflip6.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"11147"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ErmzjRo0a4b3Y4J\u002BBhWrXkU8neZtCi\u002Bu0ZiWMSoshPU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Mar 2025 18:48:11 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Api/uploads/xiaomi-14t-pro.6ievs1wzb5.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\xiaomi-14t-pro.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6ievs1wzb5"},{"Name":"integrity","Value":"sha256-LlsSyivca7l4wl5oXkR\u002BhxSePux8qzH4LmaJgmhg/HU="},{"Name":"label","Value":"_content/Api/uploads/xiaomi-14t-pro.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5390"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022LlsSyivca7l4wl5oXkR\u002BhxSePux8qzH4LmaJgmhg/HU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Mar 2025 19:11:41 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Api/uploads/xiaomi-14t-pro.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\xiaomi-14t-pro.jpg'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LlsSyivca7l4wl5oXkR\u002BhxSePux8qzH4LmaJgmhg/HU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5390"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022LlsSyivca7l4wl5oXkR\u002BhxSePux8qzH4LmaJgmhg/HU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Mar 2025 19:11:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Api/uploads/xiaomi-redmi-13.0n6xacer39.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\xiaomi-redmi-13.jpg'))</AssetFile>

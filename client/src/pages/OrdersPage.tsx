@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
+import { Accordion, Loader } from '@mantine/core';
 import useOrders from '../hooks/useOrders';
 import Page from '../layout/Page';
-import { Accordion, Loader } from '@mantine/core';
 import OrderCard from '../components/cards/OrderCard';
 
 export default function OrdersPage() {

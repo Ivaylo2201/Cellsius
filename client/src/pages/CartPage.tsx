@@ -1,8 +1,7 @@
 import { Suspense } from 'react';
+import { Loader } from '@mantine/core';
 import Page from '../layout/Page';
 import useCart from '../hooks/useCart';
-import { Loader } from '@mantine/core';
-import 'react-toastify/dist/ReactToastify.css';
 import ItemList from '../components/miscellaneous/ItemList';
 import ShippingPanel from '../components/miscellaneous/ShippingPanel';
 

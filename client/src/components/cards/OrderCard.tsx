@@ -19,9 +19,9 @@ export default function OrderCard({
           {shipping.type} shipping: ${shipping.cost.toFixed(2)}
         </p>
         <p className='italic text text-light-darkblue'>
-          Placed on{' '}
-          <span className='font-semibold'>{formatDate(createdAt, 'long')}</span>
-          , Expected:{' '}
+          Placed on
+          <span className='font-semibold'>{formatDate(createdAt)}</span>,
+          Expected:
           <span className='font-semibold'>
             {formatDate(addDays(createdAt, shipping.days).toString())}
           </span>

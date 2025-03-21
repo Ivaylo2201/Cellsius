@@ -1,9 +1,9 @@
-import Page from '../layout/Page';
-import PhoneCard from '../components/cards/PhoneCard';
-import { useSearchParams } from 'react-router';
-import usePhones from '../hooks/usePhones';
 import { Suspense } from 'react';
 import { Loader } from '@mantine/core';
+import { useSearchParams } from 'react-router';
+import Page from '../layout/Page';
+import PhoneCard from '../components/cards/PhoneCard';
+import usePhones from '../hooks/usePhones';
 
 export default function PhonesPage() {
   const [search] = useSearchParams();

@@ -9,5 +9,6 @@ export default function usePhones(filters: object) {
       const res = await http.get<Phone[]>('/phone', { params: filters });
       return res.data;
     },
+    staleTime: 60 * 60 * 1000
   });
 }

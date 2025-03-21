@@ -1,7 +1,7 @@
 import { ShoppingCart } from 'lucide-react';
 import { Phone } from '../../types/Phone';
-import useAddToCart from '../../hooks/useAddToCart';
 import { toast } from 'react-toastify';
+import useAddToCart from '../../hooks/useAddToCart';
 
 export default function PhoneCard({
   id,
@@ -10,13 +10,13 @@ export default function PhoneCard({
   color,
   price,
   memory,
-  imagePath,
+  imagePath
 }: Phone) {
   const { mutateAsync: addToCart } = useAddToCart();
 
   const handleAddToCart = async (id: number) => {
     await addToCart(id);
-    toast.success("Phone added to cart!")
+    toast.success('Phone added to cart!');
   };
 
   return (
@@ -33,7 +33,10 @@ export default function PhoneCard({
 
       <div className='flex items-center justify-between'>
         <p className='text-2xl'>${price}</p>
-        <button onClick={() => handleAddToCart(id)} className='flex bg-darkblue rounded-lg p-2 gap-2 cursor-pointer hover:bg-light-darkblue transition-colors duration-200'>
+        <button
+          onClick={() => handleAddToCart(id)}
+          className='flex bg-darkblue rounded-lg p-2 gap-2 cursor-pointer hover:bg-light-darkblue transition-colors duration-200'
+        >
           <ShoppingCart strokeWidth={1.75} className='text-white' size={20} />
         </button>
       </div>
