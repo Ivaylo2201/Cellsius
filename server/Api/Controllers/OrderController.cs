@@ -69,7 +69,7 @@ namespace Api.Controllers
 
             if (user.Cart!.Items.Count == 0)
             {
-                return BadRequest(new { message = "Cannot create an order from an empty cart." });
+                return BadRequest(new { message = "Cart is empty." });
             }
 
             var order = new Order

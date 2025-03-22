@@ -4,6 +4,7 @@ import { Item } from '../../types/Item';
 import QuantityControl from '../miscellaneous/QuantityControl';
 import useUpdateQuantity from '../../hooks/useUpdateQuantity';
 import useRemoveItem from '../../hooks/useRemoveItem';
+import { toast } from 'react-toastify';
 
 export default function ItemCard({ id, phone, quantity, price }: Item) {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(quantity);
@@ -14,6 +15,11 @@ export default function ItemCard({ id, phone, quantity, price }: Item) {
   const { mutateAsync: removeItem } = useRemoveItem();
 
   const imageUrl = `${import.meta.env.VITE_IMAGE_ROOT_URL}${phone.imagePath}`;
+
+  const handleItemRemove = async (id: number) => {
+    await removeItem(id);
+    toast.success('Item removed from cart!');
+  }
 
   const handleQuantityIncrement = async () => {
     setSelectedQuantity((q) => (q + 1 > 10 ? 10 : q + 1));
@@ -49,7 +55,7 @@ export default function ItemCard({ id, phone, quantity, price }: Item) {
       />
 
       <button
-        onClick={() => removeItem(id)}
+        onClick={() => handleItemRemove(id)}
         className='rounded-full absolute top-3 right-3 cursor-pointer'
       >
         <X size={20} color='var(--color-gray-400)' />

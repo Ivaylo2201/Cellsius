@@ -20,9 +20,11 @@ export default function QuantityControl({
       >
         <Minus size={16} strokeWidth={2.75} />
       </button>
+
       <span className='w-6 text-center'>
         <p className='text-xl font-semibold text-darkblue'>{quantity}</p>
       </span>
+      
       <button
         onClick={onIncrement}
         disabled={quantity === 10}

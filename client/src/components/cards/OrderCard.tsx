@@ -14,21 +14,21 @@ export default function OrderCard({
   return (
     <Accordion.Item value={id.toString()}>
       <Accordion.Control className='rounded-xl transition-colors duration-300'>
-        <p className='text-darkblue font-bold text-2xl'>Order #{id}</p>
+        <h2 className='text-darkblue font-bold text-2xl'>Order #{id}</h2>
         <p className='italic text-light-darkblue'>
           {shipping.type} shipping: ${shipping.cost.toFixed(2)}
         </p>
         <p className='italic text text-light-darkblue'>
-          Placed on
+          Placed on:&nbsp;
           <span className='font-semibold'>{formatDate(createdAt)}</span>,
-          Expected:
+          Expected on:&nbsp;
           <span className='font-semibold'>
             {formatDate(addDays(createdAt, shipping.days).toString())}
           </span>
         </p>
       </Accordion.Control>
       <Accordion.Panel>
-        <section className='pb-4.5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+        <section className='pb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
           {items.map((item) => (
             <OrderedItemCard key={item.id} {...item} />
           ))}

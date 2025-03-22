@@ -9,18 +9,20 @@ export default function ItemList({ items }: ItemListProps) {
   if (items.length === 0) {
     return (
       <section className='text-center lg:flex lg:justify-center lg:items-center lg:px-20'>
-        <p className='text-3xl font-semibold text-darkblue'>
+        <h2 className='text-3xl font-semibold text-darkblue'>
           No added items yet.
-        </p>
+        </h2>
       </section>
     );
   }
 
   return (
-    <section className='flex flex-col gap-4'>
+    <ul className='flex flex-col gap-4'>
       {items.map((item) => (
-        <ItemCard key={item.id} {...item} />
+        <li key={item.id}>
+          <ItemCard {...item} />
+        </li>
       ))}
-    </section>
+    </ul>
   );
 }

@@ -2,9 +2,7 @@ using Api;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System;
 using System.Text;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Api.Services;
 using System.Security.Claims;
 

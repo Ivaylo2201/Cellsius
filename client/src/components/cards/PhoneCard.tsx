@@ -27,11 +27,11 @@ export default function PhoneCard({
         alt={`Image of ${brand} ${model}`}
       />
 
-      <p className='font-semibold line-clamp-2 h-12'>
+      <h2 className='font-semibold line-clamp-2 h-12'>
         {brand} {model}, {color}, {memory}GB
-      </p>
+      </h2>
 
-      <div className='flex items-center justify-between'>
+      <section className='flex items-center justify-between'>
         <p className='text-2xl'>${price}</p>
         <button
           onClick={() => handleAddToCart(id)}
@@ -39,7 +39,7 @@ export default function PhoneCard({
         >
           <ShoppingCart strokeWidth={1.75} className='text-white' size={20} />
         </button>
-      </div>
+      </section>
     </div>
   );
 }
