@@ -16,7 +16,8 @@ export default function OrderCard({
       <Accordion.Control className='rounded-xl transition-colors duration-300'>
         <h2 className='text-darkblue font-bold text-2xl'>Order #{id}</h2>
         <p className='italic text-light-darkblue'>
-          {shipping.type} shipping: ${shipping.cost.toFixed(2)}
+          {shipping.type} shipping:&nbsp;
+          {shipping.cost === 0 ? 'Free' : `$${shipping.cost.toFixed(2)}`}
         </p>
         <p className='italic text text-light-darkblue'>
           Placed on:&nbsp;

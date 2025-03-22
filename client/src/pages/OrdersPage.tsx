@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
-import { Accordion, Loader } from '@mantine/core';
+import { Loader } from '@mantine/core';
 import useOrders from '../hooks/useOrders';
 import Page from '../layout/Page';
-import OrderCard from '../components/cards/OrderCard';
+import OrderList from '../components/miscellaneous/OrderList';
 
 export default function OrdersPage() {
   const { data: orders } = useOrders();
@@ -10,11 +10,7 @@ export default function OrdersPage() {
   return (
     <Page>
       <Suspense fallback={<Loader color={'var(--color-blue-400)'} />}>
-        <Accordion radius='md' className='w-96 md:w-[46rem] lg:w-[62rem]'>
-          {orders.map((order, i) => (
-            <OrderCard key={i} {...order} />
-          ))}
-        </Accordion>
+        <OrderList orders={orders} />
       </Suspense>
     </Page>
   );
