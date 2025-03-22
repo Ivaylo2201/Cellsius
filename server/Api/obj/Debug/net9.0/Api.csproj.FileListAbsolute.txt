@@ -138,7 +138,6 @@ D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\staticwebassets\msbui
 D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Api.props
 D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Api.props
 D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\staticwebassets.pack.json
-D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\Api.csproj.Up2Date
 D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\Api.dll
 D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\refint\Api.dll
@@ -167,3 +166,4 @@ D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\Microsoft.Extensions.
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\MailKit.dll
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\MimeKit.dll
+D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
