@@ -164,3 +164,6 @@ D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\Microsoft.Extensions.
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\MailKit.dll
+D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\MimeKit.dll

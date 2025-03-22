@@ -3,9 +3,11 @@ using Api.enums;
 using Api.Models;
 using Api.Services;
 using Api.utils;
+using MailKit.Search;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Asn1.X509;
 using System.Security.Claims;
 
 namespace Api.Controllers
@@ -88,6 +90,7 @@ namespace Api.Controllers
             });
 
             _context.SaveChanges();
+            _ = SendOrderConfirmationEmail(user.Email, order.Id);
 
             return CreatedAtAction(
                 nameof(CreateOrder),
@@ -128,6 +131,27 @@ namespace Api.Controllers
                     o.Shipping.Days
                 }
             };
+        }
+
+        private async Task SendOrderConfirmationEmail(string email, int orderId)
+        {
+            var order = _context.Orders.Include(o => o.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Brand)
+                                        .Include(o => o.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Model)
+                                        .Include(o => o.Items)
+                                            .ThenInclude(i => i.Phone)
+                                            .ThenInclude(p => p.Color)
+                                        .Include(o => o.Shipping)
+                                        .Where(o => o.Id == orderId)
+                                        .Single();
+
+            string subject = $"Order #{order.Id} Confirmation";
+            string body = new ReceiptService(order).GetReceipt();
+
+            await EmailService.SendEmailAsync(email, subject, body);
         }
     }
 }

@@ -9,7 +9,7 @@ import { http } from './utils/http';
 export default function Router() {
   (async () => {
     const res = await http.post<{ token: string }>('/auth/login', {
-      email: 'john@example.com',
+      email: 'ivailo_g03@abv.bg',
       password: '12345'
     });
 

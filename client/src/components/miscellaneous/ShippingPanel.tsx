@@ -26,6 +26,8 @@ export default function ShippingPanel({ subtotal }: ShippingProps) {
     data.shippings.find((s) => s.id === shippingId)?.cost || 0;
 
   const placeOrderHandler = async () => {
+    // await placeOrder
+
     try {
       await placeOrder(shippingId);
       toast.success('Order placed successfully!');

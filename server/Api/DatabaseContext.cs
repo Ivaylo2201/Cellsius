@@ -20,8 +20,8 @@ namespace Api
             var user = new User
             {
                 Id = 1,
-                Username = "John",
-                Email = "john@example.com",
+                Username = "Ivaylo",
+                Email = "ivailo_g03@abv.bg",
                 Password = BCrypt.Net.BCrypt.HashPassword("12345"),
             };
 
