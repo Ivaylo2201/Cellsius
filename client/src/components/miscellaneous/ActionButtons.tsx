@@ -29,7 +29,7 @@ export default function ActionButtons() {
     <div className='flex gap-4'>
       <Button
         to='/phone/add'
-        className='bg-blue-400 flex hover:bg-blue-300 text-white h-auto'
+        className='bg-blue-400 hover:bg-blue-300 text-white'
       >
         Add Phone
       </Button>

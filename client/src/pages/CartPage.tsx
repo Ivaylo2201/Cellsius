@@ -11,10 +11,10 @@ export default function CartPage() {
   return (
     <Page>
       <Suspense fallback={<Loader color={'var(--color-blue-400)'} />}>
-        <div className='flex flex-col lg:flex-row gap-8'>
+        <main className='flex flex-col lg:flex-row gap-8'>
           <ItemList items={cart.items} />
           <ShippingPanel subtotal={cart.subtotal} />
-        </div>
+        </main>
       </Suspense>
     </Page>
   );

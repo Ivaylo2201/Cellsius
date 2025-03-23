@@ -15,7 +15,7 @@ export default function PhoneList({ phones }: PhoneListProps) {
   }
 
   return (
-    <ul className='w-4/5 flex flex-wrap justify-center items-center gap-5'>
+    <ul className='w-3/5 lg:w-[65rem] flex flex-wrap gap-x-5.5 gap-y-5.5'>
       {phones.map((p, i) => (
         <li key={i}>
           <PhoneCard {...p} />

@@ -22,7 +22,7 @@ export default function PhoneCard({
   return (
     <div className='group w-60 flex flex-col p-4 rounded-2xl shadow font-dmsans gap-2 bg-white border border-gray-200 relative'>
       <img
-        className='h-56 object-cover py-4 group-hover:scale-105 transition-transform duration-300'
+        className='h-52 object-cover py-5 group-hover:scale-105 transition-transform duration-300'
         src={`${import.meta.env.VITE_IMAGE_ROOT_URL}${imagePath}`}
         alt={`Image of ${brand} ${model}`}
       />
@@ -31,8 +31,8 @@ export default function PhoneCard({
         {brand} {model}, {color}, {memory}GB
       </h2>
 
-      <section className='flex items-center justify-between'>
-        <p className='text-2xl'>${price}</p>
+      <section className='flex items-end justify-between'>
+        <p className='text-xl'>${price}</p>
         <button
           onClick={() => handleAddToCart(id)}
           className='flex bg-darkblue rounded-lg p-2 gap-2 cursor-pointer hover:bg-light-darkblue transition-colors duration-200'

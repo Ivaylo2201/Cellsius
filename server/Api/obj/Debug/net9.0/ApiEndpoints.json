@@ -201,7 +201,7 @@
         "IsRequired": false
       },
       {
-        "Name": "model",
+        "Name": "models",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -211,7 +211,12 @@
         "IsRequired": false
       },
       {
-        "Name": "price",
+        "Name": "minPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxPrice",
         "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },

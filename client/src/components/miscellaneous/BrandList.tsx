@@ -14,8 +14,9 @@ const data: { brand: string; image: string }[] = [
 export default function BrandList() {
   return (
     <div className='flex flex-wrap justify-center lg:justify-start gap-6'>
-      {data.map(({ brand, image }) => (
+      {data.map(({ brand, image }, i) => (
         <Link
+          key={i}
           to={`/catalogue?brand=${brand.toLowerCase()}`}
           className='flex size-30 flex-col items-center justify-center gap-4 rounded-xl border border-gray-300 bg-white p-3 transition-colors duration-300 hover:border-darkblue'
         >

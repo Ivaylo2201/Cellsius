@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Api.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers
@@ -25,17 +26,14 @@ namespace Api.Controllers
         [HttpGet("models")]
         public IActionResult GetModels([FromQuery] string? brand)
         {
-            if (string.IsNullOrEmpty(brand))
+            IQueryable<Model> models = _context.Models;
+
+            if (!string.IsNullOrEmpty(brand))
             {
-                return BadRequest(new { message = "Brand must be non-empty." });
+               models = models.Where(m => EF.Functions.Like(m.Brand.Name, brand));
             }
 
-            var models = _context.Models.Include(m => m.Brand)
-                .Where(m => EF.Functions.Like(m.Brand.Name, brand))
-                .Select(m => new { m.Id, m.Name })
-                .ToList();
-
-            return Ok(models);
+            return Ok(models.Select(m => new { m.Id, m.Name }).ToList());
         }
     }
 }

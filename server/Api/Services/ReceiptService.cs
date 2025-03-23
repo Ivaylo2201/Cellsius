@@ -10,7 +10,6 @@ namespace Api.Services
 
         private static string GenerateItemCard(int quantity, string brand, string model, string color, decimal price, string imagePath)
         {
-
             return $@"
                 <div style=""display: flex; border: 1px solid #e5e7eb; border-radius: 8px; align-items: center; justify-content: space-between; padding: 8px 16px;"">
                     <section style=""display: flex; flex-direction: column;"">

@@ -22,11 +22,12 @@ namespace Api.Services
             return this;
         }
 
-        public FilterService ByModel(string? modelName)
+        public FilterService ByModels(string? models)
         {
-            if (!string.IsNullOrEmpty(modelName))
+            if (!string.IsNullOrEmpty(models))
             {
-                this.query = this.query.Where(p => EF.Functions.Like(p.Model.Name, $"%{modelName}%"));
+                var modelsSet = models.Split(",").ToHashSet();
+                this.query = this.query.Where(p => modelsSet.Contains(p.Model.Name));
             }
 
             return this;
@@ -43,11 +44,11 @@ namespace Api.Services
         }
 
 
-        public FilterService ByPrice(decimal? price)
+        public FilterService ByPrice(decimal? min, decimal? max)
         {
-            if (price.HasValue && price > 0)
+            if (min.HasValue && max.HasValue)
             {
-                this.query = this.query.Where(p => p.Price <= price);
+                this.query = this.query.Where(p => p.Price >= min && p.Price <= max);
             }
 
             return this;

@@ -48,7 +48,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPhones([FromQuery] string? brand, string? model, string? color, decimal? price, string? search, string? sort = "asc")
+        public IActionResult GetPhones([FromQuery] string? brand, string? models, string? color, decimal? minPrice, decimal? maxPrice, string? search, string? sort = "asc")
         {
             var query = _context.Phones
                     .Include(p => p.Brand)
@@ -56,7 +56,7 @@ namespace Api.Controllers
                     .Include(p => p.Color)
                     .AsQueryable();
 
-            var filteredQuery = GetFilteredQuery(query, search, brand, model, color, price);
+            var filteredQuery = GetFilteredQuery(query, search, brand, models, color, minPrice, maxPrice);
             var orderedQuery = GetOrderedQuery(filteredQuery, sort);
 
             return Ok(ConvertToList(orderedQuery));
@@ -86,13 +86,13 @@ namespace Api.Controllers
             return fileName;
         }
 
-        private static IQueryable<Phone> GetFilteredQuery(IQueryable<Phone> query, string? search, string? brand, string? model, string? color, decimal? price)
+        private static IQueryable<Phone> GetFilteredQuery(IQueryable<Phone> query, string? search, string? brand, string? models, string? color, decimal? minPrice, decimal? maxPrice)
         {
             return new FilterService(query).BySearch(search)
                                            .ByBrand(brand)
-                                           .ByModel(model)
+                                           .ByModels(models)
                                            .ByColor(color)
-                                           .ByPrice(price)
+                                           .ByPrice(minPrice, maxPrice)
                                            .GetQuery();
         }
 
