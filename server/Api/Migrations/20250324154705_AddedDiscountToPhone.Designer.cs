@@ -3,6 +3,7 @@ using System;
 using Api;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20250324154705_AddedDiscountToPhone")]
+    partial class AddedDiscountToPhone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.2");
@@ -275,9 +278,6 @@ namespace Api.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("InitialPrice")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("Memory")
                         .HasColumnType("INTEGER");
 
@@ -285,9 +285,7 @@ namespace Api.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Price")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("TEXT")
-                        .HasComputedColumnSql("[InitialPrice] * (1 - [DiscountPercentage] / 100.0)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -305,12 +303,11 @@ namespace Api.Migrations
                             Id = 1,
                             BrandId = 1,
                             ColorId = 5,
-                            DiscountPercentage = 15,
+                            DiscountPercentage = 0,
                             ImagePath = "/uploads/samsung-galaxy-s24ultra.jpg",
-                            InitialPrice = 1300m,
                             Memory = 512,
                             ModelId = 1,
-                            Price = 0m
+                            Price = 1300m
                         },
                         new
                         {
@@ -319,22 +316,20 @@ namespace Api.Migrations
                             ColorId = 7,
                             DiscountPercentage = 0,
                             ImagePath = "/uploads/samsung-galaxy-s25.jpg",
-                            InitialPrice = 450m,
                             Memory = 64,
                             ModelId = 2,
-                            Price = 0m
+                            Price = 450m
                         },
                         new
                         {
                             Id = 3,
                             BrandId = 1,
                             ColorId = 1,
-                            DiscountPercentage = 25,
+                            DiscountPercentage = 0,
                             ImagePath = "/uploads/samsung-galaxy-a16.jpg",
-                            InitialPrice = 500m,
                             Memory = 128,
                             ModelId = 3,
-                            Price = 0m
+                            Price = 500m
                         },
                         new
                         {
@@ -343,22 +338,20 @@ namespace Api.Migrations
                             ColorId = 3,
                             DiscountPercentage = 0,
                             ImagePath = "/uploads/samsung-galaxy-zflip6.jpg",
-                            InitialPrice = 1200m,
                             Memory = 512,
                             ModelId = 4,
-                            Price = 0m
+                            Price = 1200m
                         },
                         new
                         {
                             Id = 5,
                             BrandId = 2,
                             ColorId = 2,
-                            DiscountPercentage = 40,
+                            DiscountPercentage = 0,
                             ImagePath = "/uploads/apple-iphone-16promax.jpg",
-                            InitialPrice = 2000m,
                             Memory = 512,
                             ModelId = 5,
-                            Price = 0m
+                            Price = 2000m
                         },
                         new
                         {
@@ -367,22 +360,20 @@ namespace Api.Migrations
                             ColorId = 1,
                             DiscountPercentage = 0,
                             ImagePath = "/uploads/apple-iphone-15.jpg",
-                            InitialPrice = 1750m,
                             Memory = 256,
                             ModelId = 6,
-                            Price = 0m
+                            Price = 1750m
                         },
                         new
                         {
                             Id = 7,
                             BrandId = 3,
                             ColorId = 1,
-                            DiscountPercentage = 10,
+                            DiscountPercentage = 0,
                             ImagePath = "/uploads/xiaomi-14t-pro.jpg",
-                            InitialPrice = 300m,
                             Memory = 128,
                             ModelId = 8,
-                            Price = 0m
+                            Price = 300m
                         },
                         new
                         {
@@ -391,10 +382,9 @@ namespace Api.Migrations
                             ColorId = 6,
                             DiscountPercentage = 0,
                             ImagePath = "/uploads/xiaomi-redmi-13.jpg",
-                            InitialPrice = 700m,
                             Memory = 256,
                             ModelId = 10,
-                            Price = 0m
+                            Price = 700m
                         });
                 });
 

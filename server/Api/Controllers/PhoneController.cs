@@ -3,6 +3,8 @@ using Api.Models;
 using Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Api.Controllers
 {
@@ -25,7 +27,7 @@ namespace Api.Controllers
                     BrandId = request.BrandId,
                     ModelId = request.ModelId,
                     ColorId = request.ColorId,
-                    Price = request.Price,
+                    InitialPrice = request.Price,
                     Memory = request.Memory,
                     ImagePath = $"/uploads/{this.UploadImage(
                         request.Image!,
@@ -48,7 +50,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPhones([FromQuery] string? brand, string? models, string? color, decimal? minPrice, decimal? maxPrice, string? search, string? sort = "asc")
+        public IActionResult GetPhones([FromQuery] string? brand, string? models, string? color, decimal? minPrice, decimal? maxPrice, string? search, string? sortBy, string? order = "asc")
         {
             var query = _context.Phones
                     .Include(p => p.Brand)
@@ -57,7 +59,7 @@ namespace Api.Controllers
                     .AsQueryable();
 
             var filteredQuery = GetFilteredQuery(query, search, brand, models, color, minPrice, maxPrice);
-            var orderedQuery = GetOrderedQuery(filteredQuery, sort);
+            var orderedQuery = GetOrderedQuery(filteredQuery, sortBy, order);
 
             return Ok(ConvertToList(orderedQuery));
         }
@@ -96,14 +98,23 @@ namespace Api.Controllers
                                            .GetQuery();
         }
 
-        private static IQueryable<Phone> GetOrderedQuery(IQueryable<Phone> query, string? sort)
+        private static IQueryable<Phone> GetOrderedQuery(IQueryable<Phone> query, string? sortBy, string? order)
         {
-            if (sort == "asc")
+            Dictionary<string, Expression<Func<Phone, double>>> fieldMap = new()
             {
-                return query.OrderBy(p => (double)p.Price);
-            }
+                { "price", p => (double) p.Price },
+                { "discount", p => (double) p.DiscountPercentage }
+            };
 
-            return query.OrderByDescending(p => (double)p.Price);
+            if (sortBy is null || !fieldMap.ContainsKey(sortBy))
+            {
+                return query;
+            }
+            else
+            {
+                IQueryable<Phone> ordered = order == "asc" ? query.OrderBy(fieldMap[sortBy]) : query.OrderByDescending(fieldMap[sortBy]);
+                return ordered;
+            }
         }
         
         private static IEnumerable<dynamic> ConvertToList(IQueryable<Phone> query)
@@ -111,10 +122,14 @@ namespace Api.Controllers
             return query.Select(p => new
             {
                 p.Id,
-                Brand = p.Brand.Name,
-                Model = p.Model.Name,
-                Color = p.Color.Name,
-                p.Price,
+                Brand = p.Brand!.Name,
+                Model = p.Model!.Name,
+                Color = p.Color!.Name,
+                p.DiscountPercentage,
+                price = new {
+                    initial = p.InitialPrice,
+                    discounted = p.Price
+                },
                 p.Memory,
                 p.ImagePath,
             }).ToList();

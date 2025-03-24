@@ -226,7 +226,12 @@
         "IsRequired": false
       },
       {
-        "Name": "sort",
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "order",
         "Type": "System.String",
         "IsRequired": false
       }

@@ -2,12 +2,14 @@ import { ShoppingCart } from 'lucide-react';
 import { Phone } from '../../types/Phone';
 import { toast } from 'react-toastify';
 import useAddToCart from '../../hooks/useAddToCart';
+import DiscountLabel from '../miscellaneous/DiscountLabel';
 
 export default function PhoneCard({
   id,
   brand,
   model,
   color,
+  discountPercentage,
   price,
   memory,
   imagePath
@@ -21,6 +23,10 @@ export default function PhoneCard({
 
   return (
     <div className='group w-60 flex flex-col p-4 rounded-2xl shadow font-dmsans gap-2 bg-white border border-gray-200 relative'>
+      {discountPercentage > 0 && (
+        <DiscountLabel discount={discountPercentage} />
+      )}
+
       <img
         className='h-52 object-cover py-5 group-hover:scale-105 transition-transform duration-300'
         src={`${import.meta.env.VITE_IMAGE_ROOT_URL}${imagePath}`}
@@ -32,8 +38,16 @@ export default function PhoneCard({
       </h2>
 
       <section className='flex items-end justify-between'>
-        <p className='text-xl'>${price}</p>
+        <div className='flex justify-center items-center gap-2'>
+          <p className='text-2xl'>${price.discounted}</p>
+          {discountPercentage > 0 && (
+            <p className='text-gray-400 text-[1rem] line-through'>
+              ${price.initial}
+            </p>
+          )}
+        </div>
         <button
+
           onClick={() => handleAddToCart(id)}
           className='flex bg-darkblue rounded-lg p-2 gap-2 cursor-pointer hover:bg-light-darkblue transition-colors duration-200'
         >

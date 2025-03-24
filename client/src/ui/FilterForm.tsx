@@ -17,10 +17,13 @@ export default function FilterForm() {
         maxPrice: 2500
       }
     });
-  const { fields, append, remove } = useFieldArray({ control, name: 'models' });
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'models'
+  });
 
   const navigate = useNavigate();
-
   const { data } = useServerData();
   const { data: models } = useModels(getValues('brand'));
 
@@ -29,14 +32,25 @@ export default function FilterForm() {
     return;
   };
 
-  const handleModelCheck = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      e.target.checked
-        ? append({ name: e.target.value })
-        : remove(fields.findIndex((f) => f.name === e.target.value));
-    },
-    []
-  );
+  const handleSortSet = (value: string | null) => {
+    const [sortBy, order] = (value as string).split(' ');
+
+    setValue('sortBy', sortBy.toLowerCase());
+    setValue(
+      'order',
+      order === undefined
+        ? 'desc'
+        : order.slice(1, order.length - 1).toLowerCase()
+    );
+  };
+
+  const handleModelCheck = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.checked) {
+        append({ name: e.target.value });
+      } else {
+        remove(fields.findIndex((f) => f.name === e.target.value));
+      }
+  }, []);
 
   return (
     <form
@@ -49,7 +63,7 @@ export default function FilterForm() {
         clearable
         onChange={(value) => {
           setSelectedBrand(value);
-          setValue('brand', value as string);
+          setValue('brand', value);
         }}
       />
 
@@ -89,15 +103,13 @@ export default function FilterForm() {
         <Select
           data={data.colors.map((c) => c.name)}
           placeholder='Select a color'
-          onChange={(value) => setValue('color', value as string)}
+          onChange={(value) => setValue('color', value)}
         />
 
         <Select
-          data={['Ascending', 'Descending']}
-          placeholder='Sort by price'
-          onChange={(value) =>
-            setValue('sort', value === 'Ascending' ? 'asc' : 'desc')
-          }
+          data={['Price (Asc)', 'Price (Desc)', 'Discount']}
+          placeholder='Sort by'
+          onChange={handleSortSet}
         />
       </section>
 

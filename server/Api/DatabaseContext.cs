@@ -71,14 +71,14 @@ namespace Api
             );
 
             modelBuilder.Entity<Phone>().HasData(
-                new Phone { Id = 1, BrandId = 1, ModelId = 1, ColorId = 5, Price = 1300, Memory = 512, ImagePath = "/uploads/samsung-galaxy-s24ultra.jpg" },
-                new Phone { Id = 2, BrandId = 1, ModelId = 2, ColorId = 7, Price = 450, Memory = 64, ImagePath = "/uploads/samsung-galaxy-s25.jpg" },
-                new Phone { Id = 3, BrandId = 1, ModelId = 3, ColorId = 1, Price = 500, Memory = 128, ImagePath = "/uploads/samsung-galaxy-a16.jpg" },
-                new Phone { Id = 4, BrandId = 1, ModelId = 4, ColorId = 3, Price = 1200, Memory = 512, ImagePath = "/uploads/samsung-galaxy-zflip6.jpg" },
-                new Phone { Id = 5, BrandId = 2, ModelId = 5, ColorId = 2, Price = 2000, Memory = 512, ImagePath = "/uploads/apple-iphone-16promax.jpg" },
-                new Phone { Id = 6, BrandId = 2, ModelId = 6, ColorId = 1, Price = 1750, Memory = 256, ImagePath = "/uploads/apple-iphone-15.jpg" },
-                new Phone { Id = 7, BrandId = 3, ModelId = 8, ColorId = 1, Price = 300, Memory = 128, ImagePath = "/uploads/xiaomi-14t-pro.jpg" },
-                new Phone { Id = 9, BrandId = 3, ModelId = 10, ColorId = 6, Price = 700, Memory = 256, ImagePath = "/uploads/xiaomi-redmi-13.jpg" }
+                new Phone { Id = 1, BrandId = 1, ModelId = 1, ColorId = 5, DiscountPercentage = 15, InitialPrice = 1300, Memory = 512, ImagePath = "/uploads/samsung-galaxy-s24ultra.jpg" },
+                new Phone { Id = 2, BrandId = 1, ModelId = 2, ColorId = 7, InitialPrice = 450, Memory = 64, ImagePath = "/uploads/samsung-galaxy-s25.jpg" },
+                new Phone { Id = 3, BrandId = 1, ModelId = 3, ColorId = 1, DiscountPercentage = 25, InitialPrice = 500, Memory = 128, ImagePath = "/uploads/samsung-galaxy-a16.jpg" },
+                new Phone { Id = 4, BrandId = 1, ModelId = 4, ColorId = 3, InitialPrice = 1200, Memory = 512, ImagePath = "/uploads/samsung-galaxy-zflip6.jpg" },
+                new Phone { Id = 5, BrandId = 2, ModelId = 5, ColorId = 2, DiscountPercentage = 40, InitialPrice = 2000, Memory = 512, ImagePath = "/uploads/apple-iphone-16promax.jpg" },
+                new Phone { Id = 6, BrandId = 2, ModelId = 6, ColorId = 1, InitialPrice = 1750, Memory = 256, ImagePath = "/uploads/apple-iphone-15.jpg" },
+                new Phone { Id = 7, BrandId = 3, ModelId = 8, ColorId = 1, DiscountPercentage = 10, InitialPrice = 300, Memory = 128, ImagePath = "/uploads/xiaomi-14t-pro.jpg" },
+                new Phone { Id = 9, BrandId = 3, ModelId = 10, ColorId = 6, InitialPrice = 700, Memory = 256, ImagePath = "/uploads/xiaomi-redmi-13.jpg" }
             );
         }
 
@@ -96,6 +96,10 @@ namespace Api
                 .HasOne(u => u.Cart)
                 .WithOne(c => c.User)
                 .HasForeignKey<Cart>(c => c.UserId);
+
+            modelBuilder.Entity<Phone>()
+                .Property(p => p.Price)
+                .HasComputedColumnSql("[InitialPrice] * (1 - [DiscountPercentage] / 100.0)");
 
             this.Seed(modelBuilder);
         }

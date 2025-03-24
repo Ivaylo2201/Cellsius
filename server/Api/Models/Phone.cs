@@ -5,16 +5,17 @@
         public int Id { get; set; }
 
         public int BrandId { get; set; }
-        public virtual Brand Brand { get; set; }
+        public Brand? Brand { get; set; }
 
         public int ModelId { get; set; }
-        public virtual Model Model { get; set; }
+        public Model? Model { get; set; }
 
         public int ColorId { get; set; }
-        public virtual Color Color { get; set; }
+        public Color? Color { get; set; }
 
-        public int Memory { get; set; }
-
+        public required int Memory { get; set; }
+        public int DiscountPercentage { get; set; } = 0;
+        public required decimal InitialPrice { get; set; }
         public decimal Price { get; set; }
         public required string ImagePath { get; set; }
 

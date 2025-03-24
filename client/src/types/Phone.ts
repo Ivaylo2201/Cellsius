@@ -3,7 +3,11 @@ export type Phone = {
   brand: string;
   model: string;
   color: string;
-  price: number;
+  discountPercentage: number;
+  price: {
+    initial: number;
+    discounted: number;
+  };
   memory: number;
   imagePath: string;
 };

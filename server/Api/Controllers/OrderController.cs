@@ -108,8 +108,8 @@ namespace Api.Controllers
                 i.Quantity,
                 Phone = new
                 {
-                    brand = i.Phone.Brand.Name,
-                    model = i.Phone.Model.Name,
+                    brand = i.Phone.Brand!.Name,
+                    model = i.Phone.Model!.Name,
                     imagePath = i.Phone.ImagePath,
                 },
                 price = i.Quantity * i.Phone.Price
