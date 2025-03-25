@@ -8,9 +8,11 @@ type PhoneListProps = {
 export default function PhoneList({ phones }: PhoneListProps) {
   if (phones.length === 0) {
     return (
-      <p className='font-dmsans text-4xl font-semibold text-darkblue'>
-        No phones match your criteria!
-      </p>
+      <div className='w-3/5 lg:w-[65rem] self-center'>
+        <p className='font-dmsans text-4xl font-semibold text-darkblue text-center'>
+          No phones match your criteria!
+        </p>
+      </div>
     );
   }
 

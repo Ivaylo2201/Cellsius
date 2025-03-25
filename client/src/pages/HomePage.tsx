@@ -1,7 +1,7 @@
 import Page from '../layout/Page';
 import stand from '../assets/stand.jpg';
 import Button from '../ui/Button';
-import BrandList from '../components/miscellaneous/BrandList';
+import BrandList from '../components/lists/BrandList';
 
 export default function HomePage() {
   return (

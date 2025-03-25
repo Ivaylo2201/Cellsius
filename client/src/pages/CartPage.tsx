@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Loader } from '@mantine/core';
 import Page from '../layout/Page';
 import useCart from '../hooks/useCart';
-import ItemList from '../components/miscellaneous/ItemList';
+import ItemList from '../components/lists/ItemList';
 import ShippingPanel from '../components/miscellaneous/ShippingPanel';
 
 export default function CartPage() {

@@ -3,8 +3,8 @@ import { Loader } from '@mantine/core';
 import { useSearchParams } from 'react-router';
 import Page from '../layout/Page';
 import usePhones from '../hooks/usePhones';
-import PhoneList from '../components/miscellaneous/PhoneList';
-import FilterForm from '../ui/FilterForm';
+import PhoneList from '../components/lists/PhoneList';
+import FilterForm from '../components/forms/FilterForm';
 
 export default function CataloguePage() {
   const [search] = useSearchParams();

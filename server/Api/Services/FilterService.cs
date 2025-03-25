@@ -46,10 +46,11 @@ namespace Api.Services
 
         public FilterService ByPrice(decimal? min, decimal? max)
         {
-            if (min.HasValue && max.HasValue)
-            {
-                this.query = this.query.Where(p => p.Price >= min && p.Price <= max);
-            }
+            if (min.HasValue)
+                this.query = this.query.Where(p => p.Price >= min);
+
+            if (max.HasValue)
+                this.query = this.query.Where(p => p.Price <= max);
 
             return this;
         }
