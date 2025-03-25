@@ -1,7 +1,10 @@
-﻿namespace Api.Data_Transfer_Objects
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Api.Data_Transfer_Objects
 {
     public class UpdateItemQuantityRequest
     {
-        public int Quantity { get; set; }
+        [Required(ErrorMessage = "Quantity is required.")]
+        public required int Quantity { get; set; }
     }
 }

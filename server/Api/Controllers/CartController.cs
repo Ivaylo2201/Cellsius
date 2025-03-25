@@ -151,9 +151,9 @@ namespace Api.Controllers
             return new
             {
                 id = p.Id,
-                brand = p.Brand.Name,
-                model = p.Model.Name,
-                color = p.Color.Name,
+                brand = p.Brand!.Name,
+                model = p.Model!.Name,
+                color = p.Color!.Name,
                 price = p.Price,
                 memory = p.Memory,
                 imagePath = p.ImagePath

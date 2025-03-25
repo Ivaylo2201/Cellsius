@@ -44,7 +44,9 @@ namespace Api
             modelBuilder.Entity<Brand>().HasData(
                 new Brand { Id = 1, Name = "Samsung" },
                 new Brand { Id = 2, Name = "Apple" },
-                new Brand { Id = 3, Name = "Xiaomi" }
+                new Brand { Id = 3, Name = "Xiaomi" },
+                new Brand { Id = 4, Name = "Motorola" },
+                new Brand { Id = 5, Name = "Huawei" }
             );
 
             modelBuilder.Entity<Model>().HasData(
@@ -57,7 +59,10 @@ namespace Api
                 new Model { Id = 7, Name = "iPhone 14", BrandId = 2 },
                 new Model { Id = 8, Name = "14T Pro", BrandId = 3 },
                 new Model { Id = 9, Name = "Redmi Note 12 Pro", BrandId = 3 },
-                new Model { Id = 10, Name = "13", BrandId = 3 }
+                new Model { Id = 10, Name = "13", BrandId = 3 },
+                new Model { Id = 11, Name = "Moto E14", BrandId = 4 },
+                new Model { Id = 12, Name = "Edge 30", BrandId = 4 },
+                new Model { Id = 13, Name = "Pura 70", BrandId = 5 }
             );
 
             modelBuilder.Entity<Color>().HasData(
@@ -71,14 +76,17 @@ namespace Api
             );
 
             modelBuilder.Entity<Phone>().HasData(
-                new Phone { Id = 1, BrandId = 1, ModelId = 1, ColorId = 5, DiscountPercentage = 15, InitialPrice = 1300, Memory = 512, ImagePath = "/uploads/samsung-galaxy-s24ultra.jpg" },
-                new Phone { Id = 2, BrandId = 1, ModelId = 2, ColorId = 7, InitialPrice = 450, Memory = 64, ImagePath = "/uploads/samsung-galaxy-s25.jpg" },
-                new Phone { Id = 3, BrandId = 1, ModelId = 3, ColorId = 1, DiscountPercentage = 25, InitialPrice = 500, Memory = 128, ImagePath = "/uploads/samsung-galaxy-a16.jpg" },
+                new Phone { Id = 1, BrandId = 1, ModelId = 1, ColorId = 5, InitialPrice = 1400, DiscountPercentage = 15, Memory = 512, ImagePath = "/uploads/samsung-galaxy-s24ultra.jpg" },
+                new Phone { Id = 2, BrandId = 1, ModelId = 2, ColorId = 7, InitialPrice = 1500, Memory = 64, ImagePath = "/uploads/samsung-galaxy-s25.jpg" },
+                new Phone { Id = 3, BrandId = 1, ModelId = 3, ColorId = 1, InitialPrice = 200, DiscountPercentage = 25, Memory = 128, ImagePath = "/uploads/samsung-galaxy-a16.jpg" },
                 new Phone { Id = 4, BrandId = 1, ModelId = 4, ColorId = 3, InitialPrice = 1200, Memory = 512, ImagePath = "/uploads/samsung-galaxy-zflip6.jpg" },
-                new Phone { Id = 5, BrandId = 2, ModelId = 5, ColorId = 2, DiscountPercentage = 40, InitialPrice = 2000, Memory = 512, ImagePath = "/uploads/apple-iphone-16promax.jpg" },
+                new Phone { Id = 5, BrandId = 2, ModelId = 5, ColorId = 2, InitialPrice = 2000, DiscountPercentage = 40, Memory = 512, ImagePath = "/uploads/apple-iphone-16promax.jpg" },
                 new Phone { Id = 6, BrandId = 2, ModelId = 6, ColorId = 1, InitialPrice = 1750, Memory = 256, ImagePath = "/uploads/apple-iphone-15.jpg" },
-                new Phone { Id = 7, BrandId = 3, ModelId = 8, ColorId = 1, DiscountPercentage = 10, InitialPrice = 300, Memory = 128, ImagePath = "/uploads/xiaomi-14t-pro.jpg" },
-                new Phone { Id = 9, BrandId = 3, ModelId = 10, ColorId = 6, InitialPrice = 700, Memory = 256, ImagePath = "/uploads/xiaomi-redmi-13.jpg" }
+                new Phone { Id = 7, BrandId = 3, ModelId = 8, ColorId = 1, InitialPrice = 225, DiscountPercentage = 10, Memory = 128, ImagePath = "/uploads/xiaomi-14t-pro.jpg" },
+                new Phone { Id = 9, BrandId = 3, ModelId = 10, ColorId = 6, InitialPrice = 250, Memory = 256, ImagePath = "/uploads/xiaomi-redmi-13.jpg" },
+                new Phone { Id = 10, BrandId = 4, ModelId = 11, ColorId = 1, InitialPrice = 250, Memory = 64, ImagePath = "/uploads/motorola-moto-e14.jpg" },
+                new Phone { Id = 11, BrandId = 4, ModelId = 12, ColorId = 3, InitialPrice = 400, Memory = 128, ImagePath = "/uploads/motorola-edge-30.jpg" },
+                new Phone { Id = 12, BrandId = 5, ModelId = 13, ColorId = 2, InitialPrice = 550, Memory = 256, ImagePath = "/uploads/huawei-pura-70.jpg" }
             );
         }
 
@@ -90,18 +98,13 @@ namespace Api
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.Cart)
-                .WithOne(c => c.User)
-                .HasForeignKey<Cart>(c => c.UserId);
-
             modelBuilder.Entity<Phone>()
                 .Property(p => p.Price)
-                .HasComputedColumnSql("[InitialPrice] * (1 - [DiscountPercentage] / 100.0)");
+                .HasComputedColumnSql("ROUND([InitialPrice] * (1 - [DiscountPercentage] / 100.0), 0)");
 
             this.Seed(modelBuilder);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

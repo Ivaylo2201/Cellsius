@@ -39,7 +39,7 @@ namespace Api.Services
             sb.Append("</p>");
 
             sb.Append("<div style=\"display: flex; flex-direction: column; margin: 1.5rem 0 1.5rem 0; gap: 15px;; \">");
-            sb.Append(string.Join("", this._order.Items.Select(i => GenerateItemCard(i.Quantity, i.Phone.Brand.Name, i.Phone.Model.Name, i.Phone.Color.Name, i.Quantity * i.Phone.Price, i.Phone.ImagePath))));        
+            sb.Append(string.Join("", this._order.Items.Select(i => GenerateItemCard(i.Quantity, i.Phone.Brand!.Name, i.Phone.Model!.Name, i.Phone.Color!.Name, i.Quantity * i.Phone.Price, i.Phone.ImagePath))));        
             sb.Append("</div>");
             sb.Append($"<p style=\"font-size: 1.5rem; color: #2b2b2b;\">Total: {this._order.Items.Count} item(s) for <span style=\"font-weight: bold;\">${_order.Total:F2}</span></p>");
 

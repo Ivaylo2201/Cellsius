@@ -16,7 +16,7 @@ namespace Api.Services
         {
             if (!string.IsNullOrEmpty(brandName))
             {
-                this.query = this.query.Where(p => EF.Functions.Like(p.Brand.Name, brandName));
+                this.query = this.query.Where(p => EF.Functions.Like(p.Brand!.Name, brandName));
             }
 
             return this;
@@ -27,7 +27,7 @@ namespace Api.Services
             if (!string.IsNullOrEmpty(models))
             {
                 var modelsSet = models.Split(",").ToHashSet();
-                this.query = this.query.Where(p => modelsSet.Contains(p.Model.Name));
+                this.query = this.query.Where(p => modelsSet.Contains(p.Model!.Name));
             }
 
             return this;
@@ -37,7 +37,7 @@ namespace Api.Services
         {
             if (!string.IsNullOrEmpty(colorName))
             {
-                this.query = this.query.Where(p => EF.Functions.Like(p.Color.Name, colorName));
+                this.query = this.query.Where(p => EF.Functions.Like(p.Color!.Name, colorName));
             }
 
             return this;
@@ -60,9 +60,9 @@ namespace Api.Services
             if (!string.IsNullOrEmpty(search))
             {
                 this.query = this.query.Where(
-                    p => EF.Functions.Like(p.Brand.Name, search) ||
-                         EF.Functions.Like(p.Model.Name, $"%{search}%") ||
-                         EF.Functions.Like(p.Color.Name, search)
+                    p => EF.Functions.Like(p.Brand!.Name, search) ||
+                         EF.Functions.Like(p.Model!.Name, $"%{search}%") ||
+                         EF.Functions.Like(p.Color!.Name, search)
                 );
             }
 

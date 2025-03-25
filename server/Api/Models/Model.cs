@@ -6,7 +6,7 @@
         public required string Name { get; set; }
 
         public int BrandId { get; set; }
-        public virtual Brand Brand { get; set; }
+        public Brand? Brand { get; set; }
 
         public List<Phone> Phones { get; set; } = [];
     }

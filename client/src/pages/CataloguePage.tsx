@@ -13,7 +13,7 @@ export default function CataloguePage() {
   return (
     <Page>
       <Suspense fallback={<Loader color={'var(--color-blue-400)'} />}>
-        <main className='min-h-[47rem] flex flex-col lg:flex-row items-center lg:items-start gap-7'>
+        <main className='min-h-[47rem] flex flex-col lg:flex-row items-center lg:items-start gap-10'>
           <FilterForm />
           <PhoneList phones={phones} />
         </main>

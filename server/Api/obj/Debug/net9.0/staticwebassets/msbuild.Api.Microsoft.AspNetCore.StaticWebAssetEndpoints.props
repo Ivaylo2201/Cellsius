@@ -24,6 +24,66 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"s4qooget1f"},{"Name":"integrity","Value":"sha256-TBJACG3QFipXUGN0RTllel94yZZNmNHhW9Emcljttw0="},{"Name":"label","Value":"_content/Api/uploads/apple-iphone-16promax.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"12556"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022TBJACG3QFipXUGN0RTllel94yZZNmNHhW9Emcljttw0=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Mar 2025 18:50:27 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/huawei-pura-70.am1ywcwhwj.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\huawei-pura-70.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"am1ywcwhwj"},{"Name":"integrity","Value":"sha256-TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k="},{"Name":"label","Value":"_content/Api/uploads/huawei-pura-70.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6895"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:03:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/huawei-pura-70.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\huawei-pura-70.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"6895"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:03:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/motorola-edge-30.i0nu8k97b5.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\motorola-edge-30.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"i0nu8k97b5"},{"Name":"integrity","Value":"sha256-/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ="},{"Name":"label","Value":"_content/Api/uploads/motorola-edge-30.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6024"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:02:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/motorola-edge-30.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\motorola-edge-30.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"6024"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:02:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/motorola-moto-e14.1qz1du6u9o.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\motorola-moto-e14.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1qz1du6u9o"},{"Name":"integrity","Value":"sha256-GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8="},{"Name":"label","Value":"_content/Api/uploads/motorola-moto-e14.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5115"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:01:19 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/motorola-moto-e14.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\motorola-moto-e14.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5115"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:01:19 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/nokia-230.bppgn2iv8l.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\nokia-230.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bppgn2iv8l"},{"Name":"integrity","Value":"sha256-H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc="},{"Name":"label","Value":"_content/Api/uploads/nokia-230.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5176"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:04:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/nokia-230.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\nokia-230.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5176"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:04:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/nokia-6310.3lx8tt817u.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\nokia-6310.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3lx8tt817u"},{"Name":"integrity","Value":"sha256-B\u002B2np2QA1WxpcDu8wx86Ih60akB9D4VpYan\u002BmvVNOl0="},{"Name":"label","Value":"_content/Api/uploads/nokia-6310.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4939"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022B\u002B2np2QA1WxpcDu8wx86Ih60akB9D4VpYan\u002BmvVNOl0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:04:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Api/uploads/nokia-6310.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\nokia-6310.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-B\u002B2np2QA1WxpcDu8wx86Ih60akB9D4VpYan\u002BmvVNOl0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"4939"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022B\u002B2np2QA1WxpcDu8wx86Ih60akB9D4VpYan\u002BmvVNOl0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 17:04:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Api/uploads/samsung-galaxy-a16.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\samsung-galaxy-a16.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

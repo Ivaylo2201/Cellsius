@@ -28,7 +28,7 @@ export default function PhoneCard({
       )}
 
       <img
-        className='h-52 object-cover py-5 group-hover:scale-105 transition-transform duration-300'
+        className='h-52 object-contain py-5 group-hover:scale-105 transition-transform duration-300'
         src={`${import.meta.env.VITE_IMAGE_ROOT_URL}${imagePath}`}
         alt={`Image of ${brand} ${model}`}
       />

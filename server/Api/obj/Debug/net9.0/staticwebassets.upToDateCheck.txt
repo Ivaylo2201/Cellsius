@@ -1,5 +1,10 @@
 wwwroot\uploads\apple-iphone-15.jpg
 wwwroot\uploads\apple-iphone-16promax.jpg
+wwwroot\uploads\huawei-pura-70.jpg
+wwwroot\uploads\motorola-edge-30.jpg
+wwwroot\uploads\motorola-moto-e14.jpg
+wwwroot\uploads\nokia-230.jpg
+wwwroot\uploads\nokia-6310.jpg
 wwwroot\uploads\samsung-galaxy-a16.jpg
 wwwroot\uploads\samsung-galaxy-s24ultra.jpg
 wwwroot\uploads\samsung-galaxy-s25.jpg

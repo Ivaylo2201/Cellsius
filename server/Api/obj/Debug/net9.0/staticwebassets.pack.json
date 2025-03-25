@@ -9,6 +9,26 @@
       "PackagePath": "staticwebassets\\uploads\\apple-iphone-16promax.jpg"
     },
     {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\huawei-pura-70.jpg",
+      "PackagePath": "staticwebassets\\uploads\\huawei-pura-70.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-edge-30.jpg",
+      "PackagePath": "staticwebassets\\uploads\\motorola-edge-30.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-moto-e14.jpg",
+      "PackagePath": "staticwebassets\\uploads\\motorola-moto-e14.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-230.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nokia-230.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-6310.jpg",
+      "PackagePath": "staticwebassets\\uploads\\nokia-6310.jpg"
+    },
+    {
       "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-a16.jpg",
       "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-a16.jpg"
     },

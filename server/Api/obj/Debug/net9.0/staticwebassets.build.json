@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "35m8prIB51Ev53+HLcEEcFxZfPfCekEG13rUeyElMTo=",
+  "Hash": "11oKWLgGk0CP0Cp6NXd75GLyNSj5a4jSl853AuH9GGk=",
   "Source": "Api",
   "BasePath": "_content/Api",
   "Mode": "Default",
@@ -57,6 +57,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\apple-iphone-16promax.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\huawei-pura-70.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/huawei-pura-70#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "am1ywcwhwj",
+      "Integrity": "TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\huawei-pura-70.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-edge-30.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/motorola-edge-30#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i0nu8k97b5",
+      "Integrity": "/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\motorola-edge-30.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-moto-e14.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/motorola-moto-e14#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1qz1du6u9o",
+      "Integrity": "GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\motorola-moto-e14.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-230.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/nokia-230#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bppgn2iv8l",
+      "Integrity": "H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\nokia-230.jpg"
+    },
+    {
+      "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-6310.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "uploads/nokia-6310#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3lx8tt817u",
+      "Integrity": "B+2np2QA1WxpcDu8wx86Ih60akB9D4VpYan+mvVNOl0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\nokia-6310.jpg"
     },
     {
       "Identity": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-a16.jpg",
@@ -368,6 +473,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-TBJACG3QFipXUGN0RTllel94yZZNmNHhW9Emcljttw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/huawei-pura-70.am1ywcwhwj.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\huawei-pura-70.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6895"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:03:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "am1ywcwhwj"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/huawei-pura-70.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/huawei-pura-70.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\huawei-pura-70.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6895"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:03:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TrPTgmlcQdLEAsbZBa0lXb6V4hNjpMeQdFC6g3lHA/k="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/motorola-edge-30.i0nu8k97b5.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-edge-30.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6024"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:02:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i0nu8k97b5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/motorola-edge-30.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/motorola-edge-30.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-edge-30.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6024"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:02:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/gfeIzh2SPvq0i17GEkXnlMB5ab1M7DZSURxtnRFZSQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/motorola-moto-e14.1qz1du6u9o.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-moto-e14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5115"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:01:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1qz1du6u9o"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/motorola-moto-e14.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/motorola-moto-e14.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-moto-e14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5115"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:01:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GbBcEkLKeptOTM0FDgAWaJzLPltWFUOWUXNpFub5dR8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/nokia-230.bppgn2iv8l.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-230.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5176"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:04:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bppgn2iv8l"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/nokia-230.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/nokia-230.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-230.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5176"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:04:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-H4VjCuyWjr1rUt60WPbSra/pObyUD4rwDOszdnZRCDc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/nokia-6310.3lx8tt817u.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-6310.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B+2np2QA1WxpcDu8wx86Ih60akB9D4VpYan+mvVNOl0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:04:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3lx8tt817u"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/nokia-6310.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-B+2np2QA1WxpcDu8wx86Ih60akB9D4VpYan+mvVNOl0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/nokia-6310.jpg",
+      "AssetFile": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-6310.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B+2np2QA1WxpcDu8wx86Ih60akB9D4VpYan+mvVNOl0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 17:04:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-B+2np2QA1WxpcDu8wx86Ih60akB9D4VpYan+mvVNOl0="
         }
       ]
     },

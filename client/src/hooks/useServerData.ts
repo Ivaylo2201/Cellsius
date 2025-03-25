@@ -3,7 +3,7 @@ import { http } from '../utils/http';
 import { Shipping } from '../types/Shipping';
 
 type ServerData = {
-  brands: { id: number; name: string }[];
+  brands: { id: number; name: string, count: number }[];
   colors: { id: number; name: string }[];
   shippings: Shipping[];
 };

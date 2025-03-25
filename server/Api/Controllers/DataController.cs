@@ -15,7 +15,7 @@ namespace Api.Controllers
         {
             var data = new
             {
-                Brands = _context.Brands.Select(b => new { b.Id, b.Name }).ToList(),
+                Brands = _context.Brands.Select(b => new { b.Id, b.Name, count = b.Phones.Count() }).ToList(),
                 Colors = _context.Colors.Select(c => new { c.Id, c.Name }).ToList(),
                 Shippings = _context.Shippings.Select(s => new { s.Id, s.Type, s.Cost, s.Days }).ToList()
             };
@@ -26,14 +26,19 @@ namespace Api.Controllers
         [HttpGet("models")]
         public IActionResult GetModels([FromQuery] string? brand)
         {
-            IQueryable<Model> models = _context.Models;
+            IQueryable<Brand> brands = _context.Brands.Include(b => b.Models);
 
             if (!string.IsNullOrEmpty(brand))
             {
-               models = models.Where(m => EF.Functions.Like(m.Brand.Name, brand));
+                brands = brands.Where(b => EF.Functions.Like(b.Name, brand));
             }
 
-            return Ok(models.Select(m => new { m.Id, m.Name }).ToList());
+            return Ok(brands.Select(b => new { 
+                brand = b.Name,
+                models = b.Models.Select(m => new {
+                    m.Id, m.Name 
+                }) 
+            }));
         }
     }
 }

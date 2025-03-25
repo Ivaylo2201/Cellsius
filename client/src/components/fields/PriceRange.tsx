@@ -1,10 +1,14 @@
 import { RangeSlider, RangeSliderValue } from '@mantine/core';
+import { useFormContext } from 'react-hook-form';
 
-type RangeProps = {
-  onChange: (values: RangeSliderValue) => void;
-};
+export default function PriceRange() {
+  const { setValue } = useFormContext();
 
-export default function Range({ onChange }: RangeProps) {
+  const onChange = (value: RangeSliderValue) => {
+    setValue('minPrice', value[0]);
+    setValue('maxPrice', value[1]);
+  };
+
   return (
     <RangeSlider
       min={0}
