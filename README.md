@@ -1,6 +1,1 @@
-# USP_Project
-# This is a project about mobile phones
-# Another one
-# A second commit
-# A third commit
-# forth commit
+A web-based application built with C# and TypeScript, focused on cellphones. It features a scalable architecture and efficient data management, adhering to modern software development practices for optimal performance and maintainability.
