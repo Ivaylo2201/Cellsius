@@ -11,7 +11,7 @@ using System.Security.Claims;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/carts")]
     public class CartController(DatabaseContext context) : ControllerBase
     {
         private readonly DatabaseContext _context = context;

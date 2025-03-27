@@ -6,7 +6,7 @@ export default function useOrders() {
   return useSuspenseQuery({
     queryKey: ['orders'],
     queryFn: async () => {
-      const res = await http.get<Order[]>('/order');
+      const res = await http.get<Order[]>('/orders');
       return res.data;
     },
     staleTime: 60 * 60 * 1000

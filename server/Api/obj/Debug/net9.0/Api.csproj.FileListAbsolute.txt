@@ -166,4 +166,3 @@ D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\Microsoft.Extensions.
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\MailKit.dll
 D:\Web Development\USP_Project\server\Api\bin\Debug\net9.0\MimeKit.dll
-D:\Web Development\USP_Project\server\Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

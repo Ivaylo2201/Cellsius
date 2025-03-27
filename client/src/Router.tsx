@@ -5,6 +5,7 @@ import CartPage from './pages/CartPage';
 import OrdersPage from './pages/OrdersPage';
 
 import { http } from './utils/http';
+import RegisterPage from './pages/RegisterPage';
 
 export default function Router() {
   (async () => {
@@ -23,6 +24,10 @@ export default function Router() {
         <Route path='/catalogue' element={<PhonesPage />} />
         <Route path='/cart' element={<CartPage />} />
         <Route path='/orders' element={<OrdersPage />} />
+        <Route path='/auth'>
+          <Route path='register' element={<RegisterPage />} />
+          <Route path='login' element={<></>} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

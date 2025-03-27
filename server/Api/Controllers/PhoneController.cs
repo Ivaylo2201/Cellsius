@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/phones")]
     public class PhoneController(DatabaseContext context, IWebHostEnvironment env) : ControllerBase
     {
         private readonly DatabaseContext _context = context;

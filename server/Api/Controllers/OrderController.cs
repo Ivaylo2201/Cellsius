@@ -13,7 +13,7 @@ using System.Security.Claims;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/orders")]
     public class OrderController(DatabaseContext context) : ControllerBase
     {
         private readonly DatabaseContext _context = context;

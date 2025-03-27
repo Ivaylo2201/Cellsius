@@ -50,11 +50,6 @@ namespace Api.Controllers
                 new
                 {
                     token = _authService.GenerateToken(user),
-                    cart = new
-                    {
-                        items = new List<object>(),
-                        subtotal = 0
-                    }
                 }
             );
         }

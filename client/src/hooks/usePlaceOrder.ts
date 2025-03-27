@@ -6,11 +6,11 @@ export default function usePlaceOrder() {
 
   return useMutation({
     mutationFn: async (shippingId: number) => {
-      const res = await http.post('/order/place', { shippingId });
+      const res = await http.post('/orders/place', { shippingId });
       return res.data
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['cart'] });
+      queryClient.invalidateQueries({ queryKey: ['carts'] });
       queryClient.invalidateQueries({ queryKey: ['orders'] });
     }
   })

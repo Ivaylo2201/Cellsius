@@ -1,22 +1,22 @@
+import { useAuthStore } from '../../stores/authStore';
 import Button from '../../ui/Button';
 import CartButton from '../../ui/CartButton';
 import OrdersButton from '../../ui/OrdersButton';
 
 export default function ActionButtons() {
-  // const { isAuthenticated } = useAuthStore();
-  const isAuthenticated = true;
+  const { isAuthenticated } = useAuthStore();
 
   if (!isAuthenticated) {
     return (
       <div className='flex gap-4'>
         <Button
-          to='/register'
+          to='/auth/register'
           className='bg-blue-400 hover:bg-blue-300 text-white'
         >
           Register
         </Button>
         <Button
-          to='/login'
+          to='/auth/login'
           className='bg-darkblue hover:bg-light-darkblue text-white'
         >
           Login

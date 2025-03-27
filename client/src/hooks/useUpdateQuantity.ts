@@ -6,13 +6,13 @@ export default function useUpdateQuantity(id: number, quantity: number) {
 
   return useMutation({
     mutationFn: async () => {
-      const res = await http.patch<{ message: string }>(`/cart/item/${id}`, {
+      const res = await http.patch<{ message: string }>(`/carts/item/${id}`, {
         quantity
       });
       return res.data;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['cart'] });
+      queryClient.invalidateQueries({ queryKey: ['carts'] });
     }
   });
 }

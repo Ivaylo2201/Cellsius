@@ -6,10 +6,10 @@ export default function useRemoveItem() {
 
   return useMutation({
     mutationFn: async (id: number) => {
-      await http.delete(`/cart/remove/${id}`);
+      await http.delete(`/carts/remove/${id}`);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['cart'] });
+      queryClient.invalidateQueries({ queryKey: ['carts'] });
     }
   });
 }

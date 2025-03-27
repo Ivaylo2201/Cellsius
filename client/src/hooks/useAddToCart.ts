@@ -6,11 +6,11 @@ export default function useAddToCart() {
 
   return useMutation({
     mutationFn: async (id: number) => {
-      const res = await http.post('/cart/add', { phoneId: id });
+      const res = await http.post('/carts/add', { phoneId: id });
       return res.data;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['cart'] });
+      queryClient.invalidateQueries({ queryKey: ['carts'] });
     }
   });
 }
