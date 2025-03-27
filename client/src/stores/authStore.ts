@@ -9,5 +9,8 @@ type AuthStore = {
 export const useAuthStore = create<AuthStore>((set) => ({
   isAuthenticated: false,
   login: () => set({ isAuthenticated: true }),
-  logout: () => set({ isAuthenticated: false })
+  logout: () => {
+    set({ isAuthenticated: false });
+    localStorage.removeItem('token');
+  }
 }));

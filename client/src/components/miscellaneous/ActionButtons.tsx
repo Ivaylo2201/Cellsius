@@ -1,6 +1,7 @@
 import { useAuthStore } from '../../stores/authStore';
 import Button from '../../ui/Button';
 import CartButton from '../../ui/CartButton';
+import LogoutButton from '../../ui/LogoutButton';
 import OrdersButton from '../../ui/OrdersButton';
 
 export default function ActionButtons() {
@@ -35,6 +36,7 @@ export default function ActionButtons() {
       </Button>
       <OrdersButton />
       <CartButton />
+      <LogoutButton />
     </div>
   );
 }
