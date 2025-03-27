@@ -7,7 +7,7 @@ type AuthStore = {
 };
 
 export const useAuthStore = create<AuthStore>((set) => ({
-  isAuthenticated: false,
+  isAuthenticated: !!localStorage.getItem('token'),
   login: () => set({ isAuthenticated: true }),
   logout: () => {
     set({ isAuthenticated: false });
