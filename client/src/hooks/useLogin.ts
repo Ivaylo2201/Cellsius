@@ -1,14 +1,22 @@
 import { useMutation } from '@tanstack/react-query';
-import { RegisterData } from '../types/RegisterData';
 import { http } from '../utils/http';
 import { useAuthStore } from '../stores/authStore';
+import { LoginData } from '../types/LoginData';
 
-export default function useRegister() {
+type Response = {
+  token: string;
+  cart: {
+    items: number;
+    subtotal: number;
+  };
+};
+
+export default function useLogin() {
   const { login } = useAuthStore();
 
   return useMutation({
-    mutationFn: async (data: RegisterData) => {
-      const res = await http.post('/auth/register', data);
+    mutationFn: async (data: LoginData) => {
+      const res = await http.post<Response>('/auth/login', data);
       return res.data;
     },
     onSuccess: (data) => {
