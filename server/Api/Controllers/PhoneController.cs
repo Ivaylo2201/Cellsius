@@ -23,9 +23,9 @@ namespace Api.Controllers
             {
                 var phone = new Phone
                 {
-                    BrandId = request.BrandId,
-                    ModelId = request.ModelId,
-                    ColorId = request.ColorId,
+                    Brand = _context.Brands.Where(b => b.Name == request.Brand).FirstOrDefault(),
+                    Model = _context.Models.Where(m => m.Name == request.Model).FirstOrDefault(),
+                    Color = _context.Colors.Where(c => c.Name == request.Color).FirstOrDefault(),
                     InitialPrice = request.Price,
                     Memory = request.Memory,
                     ImagePath = $"/uploads/{this.UploadImage(
@@ -44,7 +44,7 @@ namespace Api.Controllers
             }
             catch (DbUpdateException)
             {
-                return BadRequest(new { message = "Foreign key constraint failed." });
+                return BadRequest(new { message = "Please fill out all fields." });
             }
         }
 
@@ -115,7 +115,7 @@ namespace Api.Controllers
                 return ordered;
             }
         }
-        
+
         private static IEnumerable<dynamic> ConvertToList(IQueryable<Phone> query)
         {
             return query.Select(p => new
@@ -125,7 +125,8 @@ namespace Api.Controllers
                 Model = p.Model!.Name,
                 Color = p.Color!.Name,
                 p.DiscountPercentage,
-                price = new {
+                price = new
+                {
                     initial = p.InitialPrice,
                     discounted = p.Price
                 },

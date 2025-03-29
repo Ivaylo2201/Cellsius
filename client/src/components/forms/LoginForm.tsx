@@ -12,9 +12,7 @@ import { Lock, Mail } from 'lucide-react';
 import { loginSchema } from '../../schemas/login.schema';
 import useLogin from '../../hooks/useLogin';
 
-type RegisterProps = {};
-
-export default function Register({}: RegisterProps) {
+export default function Register() {
   const { register, handleSubmit } = useForm<RegisterData>();
   const { mutateAsync } = useLogin();
   const navigate = useNavigate();

@@ -4,14 +4,14 @@ namespace Api.Data_Transfer_Objects
 {
     public class CreatePhoneRequest
     {
-        [Required(ErrorMessage = "BrandId is required.")]
-        public required int BrandId { get; set; }
+        [Required(ErrorMessage = "Brand is required.")]
+        public required string Brand { get; set; }
 
-        [Required(ErrorMessage = "ModelId is required.")]
-        public required int ModelId { get; set; }
+        [Required(ErrorMessage = "Model is required.")]
+        public required string Model { get; set; }
 
-        [Required(ErrorMessage = "ColorId is required.")]
-        public required int ColorId { get; set; }
+        [Required(ErrorMessage = "Color is required.")]
+        public required string Color { get; set; }
 
         [Range(1, 5000, ErrorMessage = "Price must be between 1 and 5000.")]
         public required decimal Price { get; set; }

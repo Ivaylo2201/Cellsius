@@ -6,7 +6,7 @@ export default function Footer() {
       <section className='text-white p-5 flex justify-center items-center gap-8'>
         <Link to='/'>Home</Link>
         <Link to='/catalogue'>Catalogue</Link>
-        <Link to='/login'>Login</Link>
+        <Link to='/auth/login'>Login</Link>
       </section>
       <section className='text-white p-5 flex justify-center items-center gap-8'>
         <p>© {new Date().getFullYear()} Cellsius. All rights reserved.</p>

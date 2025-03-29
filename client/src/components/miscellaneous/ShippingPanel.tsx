@@ -22,11 +22,9 @@ export default function ShippingPanel({ subtotal }: ShippingProps) {
   const { data } = useServerData();
   const { mutateAsync: placeOrder } = usePlaceOrder();
 
-  const shippingCost =
-    data.shippings.find((s) => s.id === shippingId)?.cost || 0;
+  const shippingCost = data.shippings.find((s) => s.id === shippingId)?.cost || 0;
 
   const placeOrderHandler = async () => {
-    // await placeOrder
 
     try {
       await placeOrder(shippingId);

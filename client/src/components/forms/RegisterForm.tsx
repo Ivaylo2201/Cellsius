@@ -10,9 +10,7 @@ import { PasswordInput, TextInput } from '@mantine/core';
 import SubmitButton from '../../ui/SubmitButton';
 import { Lock, LockKeyhole, Mail, User } from 'lucide-react';
 
-type RegisterProps = {};
-
-export default function Register({}: RegisterProps) {
+export default function Register() {
   const { register, handleSubmit } = useForm<RegisterData>();
   const { mutateAsync } = useRegister();
   const navigate = useNavigate();
