@@ -309,7 +309,7 @@ Access the RESTful API at these endpoints:
 
 ```json
 {
-    "message": Order successfully placed!"
+    "message": "Order successfully placed!"
 }
 ```
 
