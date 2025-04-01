@@ -105,7 +105,6 @@ Access the RESTful API at these endpoints:
     "memory": 512,
     "imagePath": "/uploads/samsung-galaxy-s24ultra.jpg"
   }
-  ...
 ]
 ```
 
@@ -287,7 +286,6 @@ Access the RESTful API at these endpoints:
             },
             "price": 2380.0
         },
-        ...
     ]
 }
 ```
@@ -334,7 +332,6 @@ Access the RESTful API at these endpoints:
             "name": "Apple",
             "count": 3
         },
-        ...
     ],
     "colors": [
         {
@@ -345,7 +342,6 @@ Access the RESTful API at these endpoints:
             "id": 2,
             "name": "White"
         },
-        ...
     ],
     "shippings": [
         {
@@ -360,7 +356,6 @@ Access the RESTful API at these endpoints:
             "cost": 15,
             "days": 3
         },
-        ...
     ]
 }
 ```
@@ -392,7 +387,6 @@ Access the RESTful API at these endpoints:
                 "id": 2,
                 "name": "Galaxy S25"
             },
-            ...
         ]
     }
 ]
