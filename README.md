@@ -7,8 +7,6 @@ A web-based application built with C# and TypeScript, focused on cellphones. It 
 ![catalogue_page](https://github.com/user-attachments/assets/3727111f-eace-4e9d-89ce-6c50493ad3e7)
 ---
 ![cart_page](https://github.com/user-attachments/assets/0000c0c8-202f-47ea-8db3-33a689766f05)
----
-![orders_page](https://github.com/user-attachments/assets/51b32e1a-f73f-4ce5-a856-e6d7a82b93b9)
 
 ## 🚀 Starting the Project
 
@@ -40,15 +38,14 @@ If there are additional configurations, such as a database or a .env file, you s
 ```
 
 5. **Accessibility**
-```sh
-The frontend will be available at: **http://localhost:5173**
-The backend will be available at: **http://localhost:1634**
 
-Those settings may vary according to the appsettings.json or .env in `/client`
-```
+- The frontend will be available at: **http://localhost:5173**
+
+- The backend will be available at: **http://localhost:1634**
+
+Those settings may vary according to the `appsettings.json` or .env in `/client`
 
 ##  📧 Querying the backend
-
 
 Base url: **http://localhost:1634/api**
 
