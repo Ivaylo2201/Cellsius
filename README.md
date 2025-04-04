@@ -23,23 +23,19 @@ dotnet run
 
 3. **Install & run the frontend**
 ```sh
-cd ../../client
+cd client
 npm install
 npm run dev
 ```
 
 4. **Additional configurations**
 ```sh
-If there are additional configurations, such as a database or a .env file, you should include them as well. 🚀
+Create an .env file in /client and add:
+
+VITE_API_URL=https://localhost:<PORT>/api
+VITE_IMAGE_ROOT_URL=https://localhost:<PORT>
+
 ```
-
-5. **Accessibility**
-
-- The frontend will be available at: **http://localhost:5173**
-
-- The backend will be available at: **http://localhost:1634**
-
-Those settings may vary according to the `appsettings.json` or .env in `/client`
 
 ##  📧 Querying the backend
 
