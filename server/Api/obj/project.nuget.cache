@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JEoyo7oZSQ8=",
+  "dgSpecHash": "/i04xZpyz6A=",
   "success": true,
-  "projectFilePath": "D:\\Web Development\\USP_Project\\server\\Api\\Api.csproj",
+  "projectFilePath": "D:\\Web Development\\Cellsius\\server\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivaylo\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Ivaylo\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",

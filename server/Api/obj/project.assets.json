@@ -3789,11 +3789,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Web Development\\USP_Project\\server\\Api\\Api.csproj",
+      "projectUniqueName": "D:\\Web Development\\Cellsius\\server\\Api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "D:\\Web Development\\USP_Project\\server\\Api\\Api.csproj",
+      "projectPath": "D:\\Web Development\\Cellsius\\server\\Api\\Api.csproj",
       "packagesPath": "C:\\Users\\Ivaylo\\.nuget\\packages\\",
-      "outputPath": "D:\\Web Development\\USP_Project\\server\\Api\\obj\\",
+      "outputPath": "D:\\Web Development\\Cellsius\\server\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3892,7 +3892,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

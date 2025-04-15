@@ -19,7 +19,7 @@ export default function ItemCard({ id, phone, quantity, price }: Item) {
   const handleItemRemove = async (id: number) => {
     await removeItem(id);
     toast.success('Item removed from cart!');
-  }
+  };
 
   const handleQuantityIncrement = async () => {
     setSelectedQuantity((q) => (q + 1 > 10 ? 10 : q + 1));
@@ -42,7 +42,7 @@ export default function ItemCard({ id, phone, quantity, price }: Item) {
         <p className='font-semibold line-clamp-2 '>
           {phone.brand} {phone.model}, {phone.color}, {phone.memory}GB
         </p>
-        <p>Product price: ${phone.price}</p>
+        <p>Product price: ${phone.price.discounted}</p>
         <p className='font-semibold mt-auto py-1 text-xl text-darkblue'>
           ${price.toFixed(2)}
         </p>
