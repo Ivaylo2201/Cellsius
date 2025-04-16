@@ -23,7 +23,7 @@ namespace Api.Controllers
         public IActionResult GetOrders()
         {
             int? userId = AuthService.DecodeIdFromToken(User.FindFirst(ClaimTypes.NameIdentifier));
-
+            
             if (userId is null)
             {
                 return Unauthorized(ErrorMessage.GetMessageObject(ErrorType.InvalidToken));

@@ -1,59 +1,71 @@
 {
   "Files": [
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-15.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\2dca7314-cf99-4ab9-9441-061f1510efc9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2dca7314-cf99-4ab9-9441-061f1510efc9.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\3f0b77c3-c0b8-480e-a639-d37621cf82c6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3f0b77c3-c0b8-480e-a639-d37621cf82c6.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\apple-iphone-15.jpg",
       "PackagePath": "staticwebassets\\uploads\\apple-iphone-15.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\apple-iphone-16promax.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\apple-iphone-16promax.jpg",
       "PackagePath": "staticwebassets\\uploads\\apple-iphone-16promax.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\huawei-pura-70.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\b0c2dcb6-1d17-4bc6-990c-74fbf8fd4817.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b0c2dcb6-1d17-4bc6-990c-74fbf8fd4817.jpg"
+    },
+    {
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\huawei-pura-70.jpg",
       "PackagePath": "staticwebassets\\uploads\\huawei-pura-70.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-edge-30.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\motorola-edge-30.jpg",
       "PackagePath": "staticwebassets\\uploads\\motorola-edge-30.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\motorola-moto-e14.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\motorola-moto-e14.jpg",
       "PackagePath": "staticwebassets\\uploads\\motorola-moto-e14.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-230.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\nokia-230.jpg",
       "PackagePath": "staticwebassets\\uploads\\nokia-230.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\nokia-6310.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\nokia-6310.jpg",
       "PackagePath": "staticwebassets\\uploads\\nokia-6310.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-a16.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-a16.jpg",
       "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-a16.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s24ultra.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s24ultra.jpg",
       "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-s24ultra.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s25.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-s25.jpg",
       "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-s25.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-zflip6.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\samsung-galaxy-zflip6.jpg",
       "PackagePath": "staticwebassets\\uploads\\samsung-galaxy-zflip6.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-14t-pro.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\xiaomi-14t-pro.jpg",
       "PackagePath": "staticwebassets\\uploads\\xiaomi-14t-pro.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redmi-13.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\xiaomi-redmi-13.jpg",
       "PackagePath": "staticwebassets\\uploads\\xiaomi-redmi-13.jpg"
     },
     {
-      "Id": "D:\\Web Development\\USP_Project\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-12-pro.jpg",
+      "Id": "D:\\Web Development\\Cellsius\\server\\Api\\wwwroot\\uploads\\xiaomi-redminote-12-pro.jpg",
       "PackagePath": "staticwebassets\\uploads\\xiaomi-redminote-12-pro.jpg"
     },
     {
