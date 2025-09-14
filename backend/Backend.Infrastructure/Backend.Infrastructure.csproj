@@ -7,9 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Database\" />
-      <Folder Include="Extensions\" />
-      <Folder Include="Migrations\" />
+      <Folder Include="Database\Configurations\" />
+      <Folder Include="Database\Migrations\" />
+      <Folder Include="Database\Repositories\" />
+      <Folder Include="Database\Seeder\" />
       <Folder Include="Services\" />
     </ItemGroup>
 

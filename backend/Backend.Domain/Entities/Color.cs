@@ -3,6 +3,7 @@
 public class Color
 {
     public int Id { get; set; }
-    public required string Name { get; set; }
-    public List<Phone> Phones { get; set; } = [];
+    public required string ColorName { get; set; }
+    
+    public ICollection<Phone> Phones { get; set; } = [];
 }

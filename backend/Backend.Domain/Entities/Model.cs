@@ -8,5 +8,5 @@ public class Model
     public int BrandId { get; set; }
     public Brand Brand { get; set; } = null!;
 
-    public List<Phone> Phones { get; set; } = [];
+    public ICollection<Phone> Phones { get; set; } = [];
 }

@@ -3,7 +3,8 @@
 public class Brand
 {
     public int Id { get; set; }
-    public required string Name { get; set; }
-    public List<Phone> Phones { get; set; } = [];
-    public List<Model> Models { get; set; } = [];
-}
+    public required string BrandName { get; set; }
+    
+    public ICollection<Phone> Phones { get; set; } = [];
+    public ICollection<Model> Models { get; set; } = [];
+} 

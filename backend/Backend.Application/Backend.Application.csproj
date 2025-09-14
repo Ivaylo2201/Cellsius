@@ -7,7 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="CQRS\" />
       <Folder Include="DTOs\" />
+      <Folder Include="Extensions\Mapping\" />
       <Folder Include="Interfaces\" />
     </ItemGroup>
 
