@@ -3,10 +3,11 @@ using Backend.Application.Extensions;
 using Backend.Infrastructure.Extensions;
 using Backend.Infrastructure.Utilities;
 using DotNetEnv;
-using FluentValidation;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+#region Environment Variables
 
 Env.Load();
 
@@ -14,11 +15,17 @@ var jwtSecretKey = Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JW
 var jwtIssuer = Environment.GetEnvironmentVariable("JWT_ISSUER")!;
 var jwtAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE")!;
 var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING")!;
-var isInDevelopment = bool.Parse(Environment.GetEnvironmentVariable("IS_IN_DEVELOPMENT")!);
+var frontendUrl = Environment.GetEnvironmentVariable("FRONTEND_URL")!;
+var corsPolicy = bool.Parse(Environment.GetEnvironmentVariable("IS_IN_DEVELOPMENT")!) ? CorsPolicy.AllowAny : CorsPolicy.AllowFrontend;
+
+#endregion
+
+#region Services
 
 builder.Services.AddControllers(o => o.Filters.Add<ExceptionFilter>());
 builder.Services.AddControllers();
-builder.Services.AddInfrastructure(new JwtConfig(jwtSecretKey, jwtIssuer, jwtAudience), connectionString);
+builder.Services.AddInfrastructure(new JwtConfig(jwtSecretKey, jwtIssuer, jwtAudience), connectionString, frontendUrl);
+builder.Services.AddApplication();
 builder.Services.AddOpenApi();
 builder.Services.AddApplication();
 // builder.Services.AddValidatorsFromAssemblyContaining<CreateUserCommandValidator>();
@@ -26,6 +33,8 @@ builder.Services.AddApplication();
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateLogger();
+
+#endregion
 
 var app = builder.Build();
 
@@ -35,7 +44,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
-app.UseCors(isInDevelopment ? "AllowAny" : "AllowFrontend");
+app.UseCors(corsPolicy.ToString());
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

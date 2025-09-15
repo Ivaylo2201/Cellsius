@@ -1,7 +1,6 @@
 ﻿using System.Security.Claims;
 using Backend.Infrastructure.Database;
 using Backend.Infrastructure.Utilities;
-using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,25 +10,22 @@ namespace Backend.Infrastructure.Extensions;
 
 public static class InfrastructureExtensions
 {
-    public static void AddInfrastructure(this IServiceCollection services, JwtConfig jwtConfig, string connectionString)
+    public static void AddInfrastructure(this IServiceCollection services, JwtConfig jwtConfig, string connectionString, string frontendUrl)
     {
         services.AddDbContext<DatabaseContext>(contextOptionsBuilder =>
         {
-            contextOptionsBuilder.UseSqlServer(
-                connectionString,
-                s => s.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
-            
+            contextOptionsBuilder.UseSqlServer(connectionString, s => s.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
             services.AddJwtAuthentication(jwtConfig.Key, jwtConfig.Issuer, jwtConfig.Audience);
-            services.AddCorsSupport();
+            services.AddCorsSupport(frontendUrl);
         });
     }
     
     private static void AddJwtAuthentication(this IServiceCollection services, byte[] key, string issuer, string audience)
     {
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(o =>
+            .AddJwtBearer(jwtBearerOptions =>
             {
-                o.TokenValidationParameters = new TokenValidationParameters
+                jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters
                 {
                     NameClaimType = ClaimTypes.NameIdentifier,
                     ValidateIssuer = true,
@@ -45,21 +41,12 @@ public static class InfrastructureExtensions
         services.AddAuthorization();
     }
 
-    private static void AddCorsSupport(this IServiceCollection services)
+    private static void AddCorsSupport(this IServiceCollection services, string frontendUrl)
     {
-        Env.Load();
-        
-        var frontendUrl = Environment.GetEnvironmentVariable("FRONTEND_URL")!;
-        
-        services.AddCors(o =>
+        services.AddCors(corsOptions =>
         {
-            o.AddPolicy(
-                "AllowFrontend", 
-                p => p.WithOrigins(frontendUrl).AllowAnyHeader().AllowAnyMethod());
-
-            o.AddPolicy(
-                "AllowAny", 
-                p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            corsOptions.AddPolicy(nameof(CorsPolicy.AllowFrontend), p => p.WithOrigins(frontendUrl).AllowAnyHeader().AllowAnyMethod());
+            corsOptions.AddPolicy(nameof(CorsPolicy.AllowAny), p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
         });
     }
 }
