@@ -8,8 +8,6 @@
 
     <ItemGroup>
       <Folder Include="CQRS\" />
-      <Folder Include="DTOs\" />
-      <Folder Include="Extensions\Mapping\" />
     </ItemGroup>
 
     <ItemGroup>
