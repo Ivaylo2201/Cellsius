@@ -16,6 +16,7 @@ var jwtAudience = Environment.GetEnvironmentVariable("JWT_AUDIENCE")!;
 var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING")!;
 var isInDevelopment = bool.Parse(Environment.GetEnvironmentVariable("IS_IN_DEVELOPMENT")!);
 
+builder.Services.AddControllers(o => o.Filters.Add<ExceptionFilter>());
 builder.Services.AddControllers();
 builder.Services.AddInfrastructure(new JwtConfig(jwtSecretKey, jwtIssuer, jwtAudience), connectionString);
 builder.Services.AddOpenApi();

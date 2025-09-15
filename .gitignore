@@ -387,6 +387,7 @@ dist-ssr
 *.njsproj
 *.sw?
 
+.env
 bin/
 obj/
 /packages/

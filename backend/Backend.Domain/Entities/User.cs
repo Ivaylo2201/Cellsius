@@ -8,4 +8,6 @@ public class User
     public required string Password { get; set; }
     public int CartId { get; set; }
     public Cart Cart { get; set; } = null!;
+
+    public ICollection<Order> Orders { get; set; } = [];
 }
