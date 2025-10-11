@@ -1,5 +1,5 @@
 ﻿using Application.Interfaces.Services;
-using Core.Interfaces.Repositories;
+using Backend.Domain.Interfaces.Repositories;
 
 namespace Infrastructure.Services;
 

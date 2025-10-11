@@ -1,8 +1,6 @@
 using System.Text;
 using Application;
-using Application.CQRS.Users.Validators;
 using DotNetEnv;
-using FluentValidation;
 using Infrastructure;
 using Infrastructure.Database;
 using Infrastructure.Database.Seed;
@@ -24,7 +22,6 @@ builder.Services.AddOpenApi();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(new JwtConfig(jwtSecretKey, jwtIssuer, jwtAudience), connectionString);
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddValidatorsFromAssemblyContaining<CreateUserCommandValidator>();
 
 var app = builder.Build();
 

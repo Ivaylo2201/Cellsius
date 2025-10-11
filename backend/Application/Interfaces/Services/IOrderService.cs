@@ -1,5 +1,5 @@
-﻿using Core.Abstractions;
-using Core.Entities;
+﻿using Backend.Domain.Abstractions;
+using Backend.Domain.Entities;
 
 namespace Application.Interfaces.Services;
 

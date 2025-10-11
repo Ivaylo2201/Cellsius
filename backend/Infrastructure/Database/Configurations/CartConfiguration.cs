@@ -1,4 +1,4 @@
-﻿using Core.Entities;
+﻿using Backend.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,13 +8,16 @@ public class CartConfiguration : IEntityTypeConfiguration<Cart>
 {
     public void Configure(EntityTypeBuilder<Cart> builder)
     {
-        builder.HasKey(c => c.Id);
-        builder.HasIndex(c => c.UserId);
+        builder.HasKey(x => x.Id);
         
-        builder.HasOne(c => c.User)
-            .WithOne(u => u.Cart)
-            .HasForeignKey<Cart>(c => c.UserId)
-            .IsRequired()       
-            .OnDelete(DeleteBehavior.Cascade);
+        builder.HasOne(x => x.User)
+            .WithOne(x => x.Cart)
+            .HasForeignKey<Cart>(x => x.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.HasMany(x => x.Items)
+            .WithOne(x => x.Cart)
+            .HasForeignKey(x => x.CartId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Application.Interfaces.Services;
-using Core.Entities;
-using Core.Interfaces.Repositories;
+using Backend.Domain.Entities;
+using Backend.Domain.Interfaces.Repositories;
 
 namespace Infrastructure.Services;
 

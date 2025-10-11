@@ -1,4 +1,4 @@
-﻿using Core.Entities;
+﻿using Backend.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,12 +8,21 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> builder)
     {
-        builder.HasKey(o => o.Id);
-        builder.HasIndex(o => o.UserId);
+        builder.HasKey(x => x.Id);
         
-        builder.HasOne(o => o.User)
-            .WithMany(u => u.Orders)
-            .HasForeignKey(o => o.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+        builder.HasOne(x => x.Shipping)
+            .WithMany()
+            .HasForeignKey(x => x.ShippingId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.HasOne(x => x.User)
+            .WithMany()
+            .HasForeignKey(x => x.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.HasMany(x => x.Items)
+            .WithOne(x => x.Order)
+            .HasForeignKey(x => x.OrderId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

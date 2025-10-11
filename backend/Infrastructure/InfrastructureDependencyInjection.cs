@@ -1,8 +1,6 @@
 ﻿using System.Security.Claims;
 using Application.Interfaces.Services;
-using Core.Interfaces.Repositories;
 using Infrastructure.Database;
-using Infrastructure.Database.Repositories;
 using Infrastructure.Services;
 using Infrastructure.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -17,17 +15,6 @@ public static class InfrastructureDependencyInjection
     public static void AddInfrastructure(this IServiceCollection services, JwtConfig jwtConfig, string connectionString)
     {
         services
-            .AddScoped<IItemRepository, ItemRepository>()
-            .AddScoped<IProductRepository, ProductRepository>()
-            .AddScoped<IUserRepository, UserRepository>()
-            .AddScoped<IOrderRepository, OrderRepository>()
-            .AddScoped<IReviewRepository, ReviewRepository>()
-            .AddScoped<ICartRepository, CartRepository>()
-            .AddScoped<ICategoryRepository, CategoryRepository>()
-            .AddScoped<IShippingRepository, ShippingRepository>()
-            .AddScoped<IModelRepository, ModelRepository>()
-            .AddScoped<IBrandRepository, BrandRepository>()
-            .AddScoped<IColorRepository, ColorRepository>()
             .AddScoped<IOrderService, OrderService>()
             .AddScoped<IOwnershipService, OwnershipService>()
             .AddScoped<IAuthenticationService, AuthenticationService>()

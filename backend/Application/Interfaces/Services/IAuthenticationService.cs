@@ -1,4 +1,4 @@
-﻿using Core.Entities;
+﻿using Backend.Domain.Entities;
 
 namespace Application.Interfaces.Services;
 
